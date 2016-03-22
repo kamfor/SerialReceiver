@@ -1,71 +1,73 @@
+#include <iostream>
 #include "../include/serial.h"
+using namespace std;
 
-Ststus Status::set(){
-
+Status::value Status::get(){
+    return v;
 }
 
-void Status::get(Status){
-
+void Status::set(value status){
+    v = status;
 }
 
-Parity Parity::set(){
-
+Parity::value Parity::get(){
+    return v;
 }
 
-void Parity::get(Parity){
-
+void Parity::set(value parity){
+    v = parity;
 }
 
-BaudRate BaudRate::set(){
-
+BaudRate::value BaudRate::get(){
+    return v;
 }
 
-void StopBits::get(StopBits){
-
+void StopBits::set(value stopbits){
+    v = stopbits;
 }
 
-StopBits StopBits::set(){
-
+StopBits::value StopBits::get(){
+    return v;
 }
 
-void BaudRate::get(BaudRate){
-
+void BaudRate::set(value baudrate){
+    v = baudrate;
 }
 
-SerialError SerialError::set(){
-
+SerialError::value SerialError::get(){
+    return v;
 }
 
-void SerialError::get(SerialError){
-
+void SerialError::set(value serialerror){
+    v = serialerror;
 }
 
-DataBits DataBits::set(){
-
+DataBits::value DataBits::get(){
+    return v;
 }
 
-void DataBits::get(DataBits){
-
+void DataBits::set(value databits){
+    v = databits;
 }
 
-FlowControl FlowControl::set(){
-
+FlowControl::value FlowControl::get(){
+    return v;
 }
 
-void FlowControl::get(FlowControl){
-
+void FlowControl::set(value flowcontrol){
+    v = flowcontrol;
 }
 
-PortName PortName::set(){
-
+PortName::value PortName::get(){
+    return v;
 }
 
-void PortName::get(PortName){
-
+void PortName::set(value portname){
+    v = portname;
 }
 
 
-SerialPort::SerialPort(){
+SerialPort::SerialPort(BaudRate baudrate, Parity parity, StopBits stopbits, DataBits databits, PortName portname, FlowControl flowcontrol){
 
 }
 
@@ -73,11 +75,11 @@ SerialPort::~SerialPort(){
 
 }
 
-SerialError SerialPort::connect(){
+Status SerialPort::connect(){
 
 }
 
-SerialError SerialPort::disconnect(){
+Status SerialPort::disconnect(){
 
 }
 

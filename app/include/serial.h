@@ -1,23 +1,27 @@
 #ifndef _SERIAL_H
 #define _SERIAL_H
 
-
-#include "elements.h"
+#include "rs232.h"
 #include "buffer.h"
 
-class Status : public Element{
+class Status{
 
 private:
 
     enum value{
-        Connected,
         Disconnected,
+        Connected,
         Error
     }v;
 
+public:
+
+    void set(value);
+    value get();
+
 };
 
-class Parity : public Element{
+class Parity{
 
 private:
 
@@ -29,9 +33,14 @@ private:
         MarkParity,
         UnknownParity
     }v;
+
+public:
+
+    void set(value);
+    value get();
 };
 
-class BaudRate : public Element{
+class BaudRate{
 
 private:
 
@@ -59,9 +68,14 @@ private:
         Baud3500000 = 3500000,
         Baud4000000 = 4000000
     }v;
+
+public:
+
+    void set(value);
+    value get();
 };
 
-class StopBits : public Element{
+class StopBits{
 
 private:
 
@@ -71,9 +85,14 @@ private:
         TwoStop,
         UnknownStop
     }v;
+
+public:
+
+    void set(value);
+    value get();
 };
 
-class SerialError : public Element{
+class SerialError{
 
 private:
 
@@ -90,9 +109,14 @@ private:
         InvalidStopBits,
         UnableToGetPortStatus
     }v;
+
+public:
+
+    void set(value);
+    value get();
 };
 
-class DataBits : public Element{
+class DataBits{
 
 private:
 
@@ -103,9 +127,14 @@ private:
         Data8,
         UnknownDataBits
     }v;
+
+public:
+
+    void set(value);
+    value get();
 };
 
-class FlowControl : public Element{
+class FlowControl{
 
 private:
 
@@ -115,9 +144,14 @@ private:
         SoftwareControl,
         UnknownFlowControl
     }v;
+
+public:
+
+    void set(value);
+    value get();
 };
 
-class PortName : public Element{
+class PortName{
 
 private:
 
@@ -160,7 +194,7 @@ private:
         cuaU0,
         cuaU1,
         cuaU2,
-        cuaU3
+        cuaU3,
         //windows
         COM1,
         COM2,
@@ -177,6 +211,11 @@ private:
         COM13,
         COM14
     }v;
+
+public:
+
+    void set(value);
+    value get();
 };
 
 class SerialPort{

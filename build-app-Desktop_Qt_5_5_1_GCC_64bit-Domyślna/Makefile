@@ -163,6 +163,33 @@ main.cpp.s:
 	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+src/rs232.o: src/rs232.c.o
+
+.PHONY : src/rs232.o
+
+# target to build an object file
+src/rs232.c.o:
+	$(MAKE) -f CMakeFiles/FreenectDriver.dir/build.make CMakeFiles/FreenectDriver.dir/src/rs232.c.o
+.PHONY : src/rs232.c.o
+
+src/rs232.i: src/rs232.c.i
+
+.PHONY : src/rs232.i
+
+# target to preprocess a source file
+src/rs232.c.i:
+	$(MAKE) -f CMakeFiles/FreenectDriver.dir/build.make CMakeFiles/FreenectDriver.dir/src/rs232.c.i
+.PHONY : src/rs232.c.i
+
+src/rs232.s: src/rs232.c.s
+
+.PHONY : src/rs232.s
+
+# target to generate assembly for a file
+src/rs232.c.s:
+	$(MAKE) -f CMakeFiles/FreenectDriver.dir/build.make CMakeFiles/FreenectDriver.dir/src/rs232.c.s
+.PHONY : src/rs232.c.s
+
 src/serial.o: src/serial.cpp.o
 
 .PHONY : src/serial.o
@@ -203,6 +230,9 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... src/rs232.o"
+	@echo "... src/rs232.i"
+	@echo "... src/rs232.s"
 	@echo "... src/serial.o"
 	@echo "... src/serial.i"
 	@echo "... src/serial.s"

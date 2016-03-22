@@ -49,6 +49,6 @@ void RS232_flushRXTX(int);
 } /* extern "C" */
 #endif
 
-#endif _RS232_H
+#endif //_RS232_H
 
 

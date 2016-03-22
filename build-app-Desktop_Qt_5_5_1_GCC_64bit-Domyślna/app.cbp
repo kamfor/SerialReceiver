@@ -144,6 +144,9 @@
       <Unit filename="/home/kamil/SerialReceiver/app/main.cpp">
          <Option target="app"/>
       </Unit>
+      <Unit filename="/home/kamil/SerialReceiver/app/src/rs232.c">
+         <Option target="FreenectDriver"/>
+      </Unit>
       <Unit filename="/home/kamil/SerialReceiver/app/src/serial.cpp">
          <Option target="FreenectDriver"/>
       </Unit>
