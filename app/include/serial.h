@@ -1,7 +1,6 @@
 #ifndef _SERIAL_H
 #define _SERIAL_H
 
-#define
 
 #include "elements.h"
 #include "buffer.h"
@@ -200,4 +199,4 @@ public:
     Status disconnect();
 };
 
-#endif
+#endif //_SERIAL_H

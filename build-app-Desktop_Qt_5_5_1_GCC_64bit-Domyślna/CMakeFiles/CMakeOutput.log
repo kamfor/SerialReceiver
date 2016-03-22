@@ -28,28 +28,28 @@ The CXX compiler identification is GNU, found in "/home/kamil/SerialReceiver/bui
 Determining if the C compiler works passed with the following output:
 Change Dir: /home/kamil/SerialReceiver/build-app-Desktop_Qt_5_5_1_GCC_64bit-Domyślna/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_f6e89/fast"
-/usr/bin/make -f CMakeFiles/cmTC_f6e89.dir/build.make CMakeFiles/cmTC_f6e89.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_85b02/fast"
+/usr/bin/make -f CMakeFiles/cmTC_85b02.dir/build.make CMakeFiles/cmTC_85b02.dir/build
 make[1]: Wejście do katalogu '/home/kamil/SerialReceiver/build-app-Desktop_Qt_5_5_1_GCC_64bit-Domyślna/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_f6e89.dir/testCCompiler.c.o
-/usr/bin/cc     -o CMakeFiles/cmTC_f6e89.dir/testCCompiler.c.o   -c /home/kamil/SerialReceiver/build-app-Desktop_Qt_5_5_1_GCC_64bit-Domyślna/CMakeFiles/CMakeTmp/testCCompiler.c
-Linking C executable cmTC_f6e89
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f6e89.dir/link.txt --verbose=1
-/usr/bin/cc       CMakeFiles/cmTC_f6e89.dir/testCCompiler.c.o  -o cmTC_f6e89 -rdynamic 
+Building C object CMakeFiles/cmTC_85b02.dir/testCCompiler.c.o
+/usr/bin/cc     -o CMakeFiles/cmTC_85b02.dir/testCCompiler.c.o   -c /home/kamil/SerialReceiver/build-app-Desktop_Qt_5_5_1_GCC_64bit-Domyślna/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTC_85b02
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_85b02.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTC_85b02.dir/testCCompiler.c.o  -o cmTC_85b02 -rdynamic 
 make[1]: Opuszczenie katalogu '/home/kamil/SerialReceiver/build-app-Desktop_Qt_5_5_1_GCC_64bit-Domyślna/CMakeFiles/CMakeTmp'
 
 
 Detecting C compiler ABI info compiled with the following output:
 Change Dir: /home/kamil/SerialReceiver/build-app-Desktop_Qt_5_5_1_GCC_64bit-Domyślna/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_2b28d/fast"
-/usr/bin/make -f CMakeFiles/cmTC_2b28d.dir/build.make CMakeFiles/cmTC_2b28d.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_80367/fast"
+/usr/bin/make -f CMakeFiles/cmTC_80367.dir/build.make CMakeFiles/cmTC_80367.dir/build
 make[1]: Wejście do katalogu '/home/kamil/SerialReceiver/build-app-Desktop_Qt_5_5_1_GCC_64bit-Domyślna/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_2b28d.dir/CMakeCCompilerABI.c.o
-/usr/bin/cc     -o CMakeFiles/cmTC_2b28d.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.4/Modules/CMakeCCompilerABI.c
-Linking C executable cmTC_2b28d
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2b28d.dir/link.txt --verbose=1
-/usr/bin/cc      -v CMakeFiles/cmTC_2b28d.dir/CMakeCCompilerABI.c.o  -o cmTC_2b28d -rdynamic  
+Building C object CMakeFiles/cmTC_80367.dir/CMakeCCompilerABI.c.o
+/usr/bin/cc     -o CMakeFiles/cmTC_80367.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.4/Modules/CMakeCCompilerABI.c
+Linking C executable cmTC_80367
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_80367.dir/link.txt --verbose=1
+/usr/bin/cc      -v CMakeFiles/cmTC_80367.dir/CMakeCCompilerABI.c.o  -o cmTC_80367 -rdynamic  
 Using built-in specs.
 COLLECT_GCC=/usr/bin/cc
 COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/lto-wrapper
@@ -59,8 +59,8 @@ Thread model: posix
 gcc version 5.3.0 (GCC) 
 COMPILER_PATH=/usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/:/usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/:/usr/lib/gcc/x86_64-unknown-linux-gnu/:/usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/:/usr/lib/gcc/x86_64-unknown-linux-gnu/
 LIBRARY_PATH=/usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/:/usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_2b28d' '-rdynamic' '-mtune=generic' '-march=x86-64'
- /usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/collect2 -plugin /usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/lto-wrapper -plugin-opt=-fresolution=/tmp/cckVjwt0.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_2b28d /usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/../../../../lib/crt1.o /usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/../../../../lib/crti.o /usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/crtbegin.o -L/usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0 -L/usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/../../.. CMakeFiles/cmTC_2b28d.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/crtend.o /usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/../../../../lib/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_80367' '-rdynamic' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/collect2 -plugin /usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/lto-wrapper -plugin-opt=-fresolution=/tmp/cc61Fr1C.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_80367 /usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/../../../../lib/crt1.o /usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/../../../../lib/crti.o /usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/crtbegin.o -L/usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0 -L/usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/../../.. CMakeFiles/cmTC_80367.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/crtend.o /usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/../../../../lib/crtn.o
 make[1]: Opuszczenie katalogu '/home/kamil/SerialReceiver/build-app-Desktop_Qt_5_5_1_GCC_64bit-Domyślna/CMakeFiles/CMakeTmp'
 
 
@@ -68,14 +68,14 @@ Parsed C implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|([^/\]+-)?ld|collect2)[^/\]*( |$)]
   ignore line: [Change Dir: /home/kamil/SerialReceiver/build-app-Desktop_Qt_5_5_1_GCC_64bit-Domyślna/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_2b28d/fast"]
-  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_2b28d.dir/build.make CMakeFiles/cmTC_2b28d.dir/build]
+  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_80367/fast"]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_80367.dir/build.make CMakeFiles/cmTC_80367.dir/build]
   ignore line: [make[1]: Wejście do katalogu '/home/kamil/SerialReceiver/build-app-Desktop_Qt_5_5_1_GCC_64bit-Domyślna/CMakeFiles/CMakeTmp']
-  ignore line: [Building C object CMakeFiles/cmTC_2b28d.dir/CMakeCCompilerABI.c.o]
-  ignore line: [/usr/bin/cc     -o CMakeFiles/cmTC_2b28d.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.4/Modules/CMakeCCompilerABI.c]
-  ignore line: [Linking C executable cmTC_2b28d]
-  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2b28d.dir/link.txt --verbose=1]
-  ignore line: [/usr/bin/cc      -v CMakeFiles/cmTC_2b28d.dir/CMakeCCompilerABI.c.o  -o cmTC_2b28d -rdynamic  ]
+  ignore line: [Building C object CMakeFiles/cmTC_80367.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/usr/bin/cc     -o CMakeFiles/cmTC_80367.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.4/Modules/CMakeCCompilerABI.c]
+  ignore line: [Linking C executable cmTC_80367]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_80367.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/cc      -v CMakeFiles/cmTC_80367.dir/CMakeCCompilerABI.c.o  -o cmTC_80367 -rdynamic  ]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/cc]
   ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/lto-wrapper]
@@ -85,13 +85,13 @@ Parsed C implicit link information from above output:
   ignore line: [gcc version 5.3.0 (GCC) ]
   ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/:/usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/:/usr/lib/gcc/x86_64-unknown-linux-gnu/:/usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/:/usr/lib/gcc/x86_64-unknown-linux-gnu/]
   ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/:/usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_2b28d' '-rdynamic' '-mtune=generic' '-march=x86-64']
-  link line: [ /usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/collect2 -plugin /usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/lto-wrapper -plugin-opt=-fresolution=/tmp/cckVjwt0.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_2b28d /usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/../../../../lib/crt1.o /usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/../../../../lib/crti.o /usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/crtbegin.o -L/usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0 -L/usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/../../.. CMakeFiles/cmTC_2b28d.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/crtend.o /usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/../../../../lib/crtn.o]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_80367' '-rdynamic' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/collect2 -plugin /usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/lto-wrapper -plugin-opt=-fresolution=/tmp/cc61Fr1C.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_80367 /usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/../../../../lib/crt1.o /usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/../../../../lib/crti.o /usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/crtbegin.o -L/usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0 -L/usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/../../.. CMakeFiles/cmTC_80367.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/crtend.o /usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/../../../../lib/crtn.o]
     arg [/usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/collect2] ==> ignore
     arg [-plugin] ==> ignore
     arg [/usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/liblto_plugin.so] ==> ignore
     arg [-plugin-opt=/usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/lto-wrapper] ==> ignore
-    arg [-plugin-opt=-fresolution=/tmp/cckVjwt0.res] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/cc61Fr1C.res] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
     arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -106,7 +106,7 @@ Parsed C implicit link information from above output:
     arg [-dynamic-linker] ==> ignore
     arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_2b28d] ==> ignore
+    arg [cmTC_80367] ==> ignore
     arg [/usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/../../../../lib/crt1.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/../../../../lib/crti.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/crtbegin.o] ==> ignore
@@ -115,7 +115,7 @@ Parsed C implicit link information from above output:
     arg [-L/lib/../lib] ==> dir [/lib/../lib]
     arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
     arg [-L/usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/../../..] ==> dir [/usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/../../..]
-    arg [CMakeFiles/cmTC_2b28d.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [CMakeFiles/cmTC_80367.dir/CMakeCCompilerABI.c.o] ==> ignore
     arg [-lgcc] ==> lib [gcc]
     arg [--as-needed] ==> ignore
     arg [-lgcc_s] ==> lib [gcc_s]
@@ -146,14 +146,14 @@ Parsed C implicit link information from above output:
 Detecting C [-std=c11] compiler features compiled with the following output:
 Change Dir: /home/kamil/SerialReceiver/build-app-Desktop_Qt_5_5_1_GCC_64bit-Domyślna/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_35f05/fast"
-/usr/bin/make -f CMakeFiles/cmTC_35f05.dir/build.make CMakeFiles/cmTC_35f05.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_3902d/fast"
+/usr/bin/make -f CMakeFiles/cmTC_3902d.dir/build.make CMakeFiles/cmTC_3902d.dir/build
 make[1]: Wejście do katalogu '/home/kamil/SerialReceiver/build-app-Desktop_Qt_5_5_1_GCC_64bit-Domyślna/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_35f05.dir/feature_tests.c.o
-/usr/bin/cc    -std=c11 -o CMakeFiles/cmTC_35f05.dir/feature_tests.c.o   -c /home/kamil/SerialReceiver/build-app-Desktop_Qt_5_5_1_GCC_64bit-Domyślna/CMakeFiles/feature_tests.c
-Linking C executable cmTC_35f05
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_35f05.dir/link.txt --verbose=1
-/usr/bin/cc       CMakeFiles/cmTC_35f05.dir/feature_tests.c.o  -o cmTC_35f05 -rdynamic 
+Building C object CMakeFiles/cmTC_3902d.dir/feature_tests.c.o
+/usr/bin/cc    -std=c11 -o CMakeFiles/cmTC_3902d.dir/feature_tests.c.o   -c /home/kamil/SerialReceiver/build-app-Desktop_Qt_5_5_1_GCC_64bit-Domyślna/CMakeFiles/feature_tests.c
+Linking C executable cmTC_3902d
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3902d.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTC_3902d.dir/feature_tests.c.o  -o cmTC_3902d -rdynamic 
 make[1]: Opuszczenie katalogu '/home/kamil/SerialReceiver/build-app-Desktop_Qt_5_5_1_GCC_64bit-Domyślna/CMakeFiles/CMakeTmp'
 
 
@@ -166,14 +166,14 @@ make[1]: Opuszczenie katalogu '/home/kamil/SerialReceiver/build-app-Desktop_Qt_5
 Detecting C [-std=c99] compiler features compiled with the following output:
 Change Dir: /home/kamil/SerialReceiver/build-app-Desktop_Qt_5_5_1_GCC_64bit-Domyślna/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_bb816/fast"
-/usr/bin/make -f CMakeFiles/cmTC_bb816.dir/build.make CMakeFiles/cmTC_bb816.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_b6dc5/fast"
+/usr/bin/make -f CMakeFiles/cmTC_b6dc5.dir/build.make CMakeFiles/cmTC_b6dc5.dir/build
 make[1]: Wejście do katalogu '/home/kamil/SerialReceiver/build-app-Desktop_Qt_5_5_1_GCC_64bit-Domyślna/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_bb816.dir/feature_tests.c.o
-/usr/bin/cc    -std=c99 -o CMakeFiles/cmTC_bb816.dir/feature_tests.c.o   -c /home/kamil/SerialReceiver/build-app-Desktop_Qt_5_5_1_GCC_64bit-Domyślna/CMakeFiles/feature_tests.c
-Linking C executable cmTC_bb816
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_bb816.dir/link.txt --verbose=1
-/usr/bin/cc       CMakeFiles/cmTC_bb816.dir/feature_tests.c.o  -o cmTC_bb816 -rdynamic 
+Building C object CMakeFiles/cmTC_b6dc5.dir/feature_tests.c.o
+/usr/bin/cc    -std=c99 -o CMakeFiles/cmTC_b6dc5.dir/feature_tests.c.o   -c /home/kamil/SerialReceiver/build-app-Desktop_Qt_5_5_1_GCC_64bit-Domyślna/CMakeFiles/feature_tests.c
+Linking C executable cmTC_b6dc5
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b6dc5.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTC_b6dc5.dir/feature_tests.c.o  -o cmTC_b6dc5 -rdynamic 
 make[1]: Opuszczenie katalogu '/home/kamil/SerialReceiver/build-app-Desktop_Qt_5_5_1_GCC_64bit-Domyślna/CMakeFiles/CMakeTmp'
 
 
@@ -186,14 +186,14 @@ make[1]: Opuszczenie katalogu '/home/kamil/SerialReceiver/build-app-Desktop_Qt_5
 Detecting C [-std=c90] compiler features compiled with the following output:
 Change Dir: /home/kamil/SerialReceiver/build-app-Desktop_Qt_5_5_1_GCC_64bit-Domyślna/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_a3655/fast"
-/usr/bin/make -f CMakeFiles/cmTC_a3655.dir/build.make CMakeFiles/cmTC_a3655.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_d66dc/fast"
+/usr/bin/make -f CMakeFiles/cmTC_d66dc.dir/build.make CMakeFiles/cmTC_d66dc.dir/build
 make[1]: Wejście do katalogu '/home/kamil/SerialReceiver/build-app-Desktop_Qt_5_5_1_GCC_64bit-Domyślna/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_a3655.dir/feature_tests.c.o
-/usr/bin/cc    -std=c90 -o CMakeFiles/cmTC_a3655.dir/feature_tests.c.o   -c /home/kamil/SerialReceiver/build-app-Desktop_Qt_5_5_1_GCC_64bit-Domyślna/CMakeFiles/feature_tests.c
-Linking C executable cmTC_a3655
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a3655.dir/link.txt --verbose=1
-/usr/bin/cc       CMakeFiles/cmTC_a3655.dir/feature_tests.c.o  -o cmTC_a3655 -rdynamic 
+Building C object CMakeFiles/cmTC_d66dc.dir/feature_tests.c.o
+/usr/bin/cc    -std=c90 -o CMakeFiles/cmTC_d66dc.dir/feature_tests.c.o   -c /home/kamil/SerialReceiver/build-app-Desktop_Qt_5_5_1_GCC_64bit-Domyślna/CMakeFiles/feature_tests.c
+Linking C executable cmTC_d66dc
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d66dc.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTC_d66dc.dir/feature_tests.c.o  -o cmTC_d66dc -rdynamic 
 make[1]: Opuszczenie katalogu '/home/kamil/SerialReceiver/build-app-Desktop_Qt_5_5_1_GCC_64bit-Domyślna/CMakeFiles/CMakeTmp'
 
 
@@ -204,28 +204,28 @@ make[1]: Opuszczenie katalogu '/home/kamil/SerialReceiver/build-app-Desktop_Qt_5
 Determining if the CXX compiler works passed with the following output:
 Change Dir: /home/kamil/SerialReceiver/build-app-Desktop_Qt_5_5_1_GCC_64bit-Domyślna/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_3c3c8/fast"
-/usr/bin/make -f CMakeFiles/cmTC_3c3c8.dir/build.make CMakeFiles/cmTC_3c3c8.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_0ed54/fast"
+/usr/bin/make -f CMakeFiles/cmTC_0ed54.dir/build.make CMakeFiles/cmTC_0ed54.dir/build
 make[1]: Wejście do katalogu '/home/kamil/SerialReceiver/build-app-Desktop_Qt_5_5_1_GCC_64bit-Domyślna/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_3c3c8.dir/testCXXCompiler.cxx.o
-/usr/bin/c++      -o CMakeFiles/cmTC_3c3c8.dir/testCXXCompiler.cxx.o -c /home/kamil/SerialReceiver/build-app-Desktop_Qt_5_5_1_GCC_64bit-Domyślna/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
-Linking CXX executable cmTC_3c3c8
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3c3c8.dir/link.txt --verbose=1
-/usr/bin/c++        CMakeFiles/cmTC_3c3c8.dir/testCXXCompiler.cxx.o  -o cmTC_3c3c8 -rdynamic 
+Building CXX object CMakeFiles/cmTC_0ed54.dir/testCXXCompiler.cxx.o
+/usr/bin/c++      -o CMakeFiles/cmTC_0ed54.dir/testCXXCompiler.cxx.o -c /home/kamil/SerialReceiver/build-app-Desktop_Qt_5_5_1_GCC_64bit-Domyślna/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
+Linking CXX executable cmTC_0ed54
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0ed54.dir/link.txt --verbose=1
+/usr/bin/c++        CMakeFiles/cmTC_0ed54.dir/testCXXCompiler.cxx.o  -o cmTC_0ed54 -rdynamic 
 make[1]: Opuszczenie katalogu '/home/kamil/SerialReceiver/build-app-Desktop_Qt_5_5_1_GCC_64bit-Domyślna/CMakeFiles/CMakeTmp'
 
 
 Detecting CXX compiler ABI info compiled with the following output:
 Change Dir: /home/kamil/SerialReceiver/build-app-Desktop_Qt_5_5_1_GCC_64bit-Domyślna/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_75801/fast"
-/usr/bin/make -f CMakeFiles/cmTC_75801.dir/build.make CMakeFiles/cmTC_75801.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_6e3f0/fast"
+/usr/bin/make -f CMakeFiles/cmTC_6e3f0.dir/build.make CMakeFiles/cmTC_6e3f0.dir/build
 make[1]: Wejście do katalogu '/home/kamil/SerialReceiver/build-app-Desktop_Qt_5_5_1_GCC_64bit-Domyślna/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_75801.dir/CMakeCXXCompilerABI.cpp.o
-/usr/bin/c++      -o CMakeFiles/cmTC_75801.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.4/Modules/CMakeCXXCompilerABI.cpp
-Linking CXX executable cmTC_75801
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_75801.dir/link.txt --verbose=1
-/usr/bin/c++       -v CMakeFiles/cmTC_75801.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_75801 -rdynamic  
+Building CXX object CMakeFiles/cmTC_6e3f0.dir/CMakeCXXCompilerABI.cpp.o
+/usr/bin/c++      -o CMakeFiles/cmTC_6e3f0.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.4/Modules/CMakeCXXCompilerABI.cpp
+Linking CXX executable cmTC_6e3f0
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6e3f0.dir/link.txt --verbose=1
+/usr/bin/c++       -v CMakeFiles/cmTC_6e3f0.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_6e3f0 -rdynamic  
 Using built-in specs.
 COLLECT_GCC=/usr/bin/c++
 COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/lto-wrapper
@@ -235,8 +235,8 @@ Thread model: posix
 gcc version 5.3.0 (GCC) 
 COMPILER_PATH=/usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/:/usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/:/usr/lib/gcc/x86_64-unknown-linux-gnu/:/usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/:/usr/lib/gcc/x86_64-unknown-linux-gnu/
 LIBRARY_PATH=/usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/:/usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_75801' '-rdynamic' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
- /usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/collect2 -plugin /usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ccCZ4DPy.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_75801 /usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/../../../../lib/crt1.o /usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/../../../../lib/crti.o /usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/crtbegin.o -L/usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0 -L/usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/../../.. CMakeFiles/cmTC_75801.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/crtend.o /usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/../../../../lib/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_6e3f0' '-rdynamic' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/collect2 -plugin /usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/lto-wrapper -plugin-opt=-fresolution=/tmp/cc0nOXHU.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_6e3f0 /usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/../../../../lib/crt1.o /usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/../../../../lib/crti.o /usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/crtbegin.o -L/usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0 -L/usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/../../.. CMakeFiles/cmTC_6e3f0.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/crtend.o /usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/../../../../lib/crtn.o
 make[1]: Opuszczenie katalogu '/home/kamil/SerialReceiver/build-app-Desktop_Qt_5_5_1_GCC_64bit-Domyślna/CMakeFiles/CMakeTmp'
 
 
@@ -244,14 +244,14 @@ Parsed CXX implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|([^/\]+-)?ld|collect2)[^/\]*( |$)]
   ignore line: [Change Dir: /home/kamil/SerialReceiver/build-app-Desktop_Qt_5_5_1_GCC_64bit-Domyślna/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_75801/fast"]
-  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_75801.dir/build.make CMakeFiles/cmTC_75801.dir/build]
+  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_6e3f0/fast"]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_6e3f0.dir/build.make CMakeFiles/cmTC_6e3f0.dir/build]
   ignore line: [make[1]: Wejście do katalogu '/home/kamil/SerialReceiver/build-app-Desktop_Qt_5_5_1_GCC_64bit-Domyślna/CMakeFiles/CMakeTmp']
-  ignore line: [Building CXX object CMakeFiles/cmTC_75801.dir/CMakeCXXCompilerABI.cpp.o]
-  ignore line: [/usr/bin/c++      -o CMakeFiles/cmTC_75801.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.4/Modules/CMakeCXXCompilerABI.cpp]
-  ignore line: [Linking CXX executable cmTC_75801]
-  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_75801.dir/link.txt --verbose=1]
-  ignore line: [/usr/bin/c++       -v CMakeFiles/cmTC_75801.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_75801 -rdynamic  ]
+  ignore line: [Building CXX object CMakeFiles/cmTC_6e3f0.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [/usr/bin/c++      -o CMakeFiles/cmTC_6e3f0.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.4/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [Linking CXX executable cmTC_6e3f0]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6e3f0.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/c++       -v CMakeFiles/cmTC_6e3f0.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_6e3f0 -rdynamic  ]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/c++]
   ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/lto-wrapper]
@@ -261,13 +261,13 @@ Parsed CXX implicit link information from above output:
   ignore line: [gcc version 5.3.0 (GCC) ]
   ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/:/usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/:/usr/lib/gcc/x86_64-unknown-linux-gnu/:/usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/:/usr/lib/gcc/x86_64-unknown-linux-gnu/]
   ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/:/usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_75801' '-rdynamic' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
-  link line: [ /usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/collect2 -plugin /usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ccCZ4DPy.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_75801 /usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/../../../../lib/crt1.o /usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/../../../../lib/crti.o /usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/crtbegin.o -L/usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0 -L/usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/../../.. CMakeFiles/cmTC_75801.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/crtend.o /usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/../../../../lib/crtn.o]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_6e3f0' '-rdynamic' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/collect2 -plugin /usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/lto-wrapper -plugin-opt=-fresolution=/tmp/cc0nOXHU.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_6e3f0 /usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/../../../../lib/crt1.o /usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/../../../../lib/crti.o /usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/crtbegin.o -L/usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0 -L/usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/../../.. CMakeFiles/cmTC_6e3f0.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/crtend.o /usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/../../../../lib/crtn.o]
     arg [/usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/collect2] ==> ignore
     arg [-plugin] ==> ignore
     arg [/usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/liblto_plugin.so] ==> ignore
     arg [-plugin-opt=/usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/lto-wrapper] ==> ignore
-    arg [-plugin-opt=-fresolution=/tmp/ccCZ4DPy.res] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/cc0nOXHU.res] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
     arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -282,7 +282,7 @@ Parsed CXX implicit link information from above output:
     arg [-dynamic-linker] ==> ignore
     arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_75801] ==> ignore
+    arg [cmTC_6e3f0] ==> ignore
     arg [/usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/../../../../lib/crt1.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/../../../../lib/crti.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/crtbegin.o] ==> ignore
@@ -291,7 +291,7 @@ Parsed CXX implicit link information from above output:
     arg [-L/lib/../lib] ==> dir [/lib/../lib]
     arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
     arg [-L/usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/../../..] ==> dir [/usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/../../..]
-    arg [CMakeFiles/cmTC_75801.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [CMakeFiles/cmTC_6e3f0.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
     arg [-lstdc++] ==> lib [stdc++]
     arg [-lm] ==> lib [m]
     arg [-lgcc_s] ==> lib [gcc_s]
@@ -320,14 +320,14 @@ Parsed CXX implicit link information from above output:
 Detecting CXX [-std=c++14] compiler features compiled with the following output:
 Change Dir: /home/kamil/SerialReceiver/build-app-Desktop_Qt_5_5_1_GCC_64bit-Domyślna/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_00da8/fast"
-/usr/bin/make -f CMakeFiles/cmTC_00da8.dir/build.make CMakeFiles/cmTC_00da8.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_19e9e/fast"
+/usr/bin/make -f CMakeFiles/cmTC_19e9e.dir/build.make CMakeFiles/cmTC_19e9e.dir/build
 make[1]: Wejście do katalogu '/home/kamil/SerialReceiver/build-app-Desktop_Qt_5_5_1_GCC_64bit-Domyślna/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_00da8.dir/feature_tests.cxx.o
-/usr/bin/c++     -std=c++14 -o CMakeFiles/cmTC_00da8.dir/feature_tests.cxx.o -c /home/kamil/SerialReceiver/build-app-Desktop_Qt_5_5_1_GCC_64bit-Domyślna/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_00da8
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_00da8.dir/link.txt --verbose=1
-/usr/bin/c++        CMakeFiles/cmTC_00da8.dir/feature_tests.cxx.o  -o cmTC_00da8 -rdynamic 
+Building CXX object CMakeFiles/cmTC_19e9e.dir/feature_tests.cxx.o
+/usr/bin/c++     -std=c++14 -o CMakeFiles/cmTC_19e9e.dir/feature_tests.cxx.o -c /home/kamil/SerialReceiver/build-app-Desktop_Qt_5_5_1_GCC_64bit-Domyślna/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_19e9e
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_19e9e.dir/link.txt --verbose=1
+/usr/bin/c++        CMakeFiles/cmTC_19e9e.dir/feature_tests.cxx.o  -o cmTC_19e9e -rdynamic 
 make[1]: Opuszczenie katalogu '/home/kamil/SerialReceiver/build-app-Desktop_Qt_5_5_1_GCC_64bit-Domyślna/CMakeFiles/CMakeTmp'
 
 
@@ -393,14 +393,14 @@ make[1]: Opuszczenie katalogu '/home/kamil/SerialReceiver/build-app-Desktop_Qt_5
 Detecting CXX [-std=c++11] compiler features compiled with the following output:
 Change Dir: /home/kamil/SerialReceiver/build-app-Desktop_Qt_5_5_1_GCC_64bit-Domyślna/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_8a092/fast"
-/usr/bin/make -f CMakeFiles/cmTC_8a092.dir/build.make CMakeFiles/cmTC_8a092.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_d641d/fast"
+/usr/bin/make -f CMakeFiles/cmTC_d641d.dir/build.make CMakeFiles/cmTC_d641d.dir/build
 make[1]: Wejście do katalogu '/home/kamil/SerialReceiver/build-app-Desktop_Qt_5_5_1_GCC_64bit-Domyślna/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_8a092.dir/feature_tests.cxx.o
-/usr/bin/c++     -std=c++11 -o CMakeFiles/cmTC_8a092.dir/feature_tests.cxx.o -c /home/kamil/SerialReceiver/build-app-Desktop_Qt_5_5_1_GCC_64bit-Domyślna/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_8a092
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8a092.dir/link.txt --verbose=1
-/usr/bin/c++        CMakeFiles/cmTC_8a092.dir/feature_tests.cxx.o  -o cmTC_8a092 -rdynamic 
+Building CXX object CMakeFiles/cmTC_d641d.dir/feature_tests.cxx.o
+/usr/bin/c++     -std=c++11 -o CMakeFiles/cmTC_d641d.dir/feature_tests.cxx.o -c /home/kamil/SerialReceiver/build-app-Desktop_Qt_5_5_1_GCC_64bit-Domyślna/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_d641d
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d641d.dir/link.txt --verbose=1
+/usr/bin/c++        CMakeFiles/cmTC_d641d.dir/feature_tests.cxx.o  -o cmTC_d641d -rdynamic 
 make[1]: Opuszczenie katalogu '/home/kamil/SerialReceiver/build-app-Desktop_Qt_5_5_1_GCC_64bit-Domyślna/CMakeFiles/CMakeTmp'
 
 
@@ -466,14 +466,14 @@ make[1]: Opuszczenie katalogu '/home/kamil/SerialReceiver/build-app-Desktop_Qt_5
 Detecting CXX [-std=c++98] compiler features compiled with the following output:
 Change Dir: /home/kamil/SerialReceiver/build-app-Desktop_Qt_5_5_1_GCC_64bit-Domyślna/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_6a7e6/fast"
-/usr/bin/make -f CMakeFiles/cmTC_6a7e6.dir/build.make CMakeFiles/cmTC_6a7e6.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_cdbff/fast"
+/usr/bin/make -f CMakeFiles/cmTC_cdbff.dir/build.make CMakeFiles/cmTC_cdbff.dir/build
 make[1]: Wejście do katalogu '/home/kamil/SerialReceiver/build-app-Desktop_Qt_5_5_1_GCC_64bit-Domyślna/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_6a7e6.dir/feature_tests.cxx.o
-/usr/bin/c++     -std=c++98 -o CMakeFiles/cmTC_6a7e6.dir/feature_tests.cxx.o -c /home/kamil/SerialReceiver/build-app-Desktop_Qt_5_5_1_GCC_64bit-Domyślna/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_6a7e6
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6a7e6.dir/link.txt --verbose=1
-/usr/bin/c++        CMakeFiles/cmTC_6a7e6.dir/feature_tests.cxx.o  -o cmTC_6a7e6 -rdynamic 
+Building CXX object CMakeFiles/cmTC_cdbff.dir/feature_tests.cxx.o
+/usr/bin/c++     -std=c++98 -o CMakeFiles/cmTC_cdbff.dir/feature_tests.cxx.o -c /home/kamil/SerialReceiver/build-app-Desktop_Qt_5_5_1_GCC_64bit-Domyślna/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_cdbff
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_cdbff.dir/link.txt --verbose=1
+/usr/bin/c++        CMakeFiles/cmTC_cdbff.dir/feature_tests.cxx.o  -o cmTC_cdbff -rdynamic 
 make[1]: Opuszczenie katalogu '/home/kamil/SerialReceiver/build-app-Desktop_Qt_5_5_1_GCC_64bit-Domyślna/CMakeFiles/CMakeTmp'
 
 

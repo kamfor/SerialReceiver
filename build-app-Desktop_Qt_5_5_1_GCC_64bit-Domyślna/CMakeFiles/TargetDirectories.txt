@@ -1,1 +1,2 @@
+/home/kamil/SerialReceiver/build-app-Desktop_Qt_5_5_1_GCC_64bit-Domyślna/CMakeFiles/FreenectDriver.dir
 /home/kamil/SerialReceiver/build-app-Desktop_Qt_5_5_1_GCC_64bit-Domyślna/CMakeFiles/app.dir

@@ -1,6 +1,6 @@
 
-#ifndef rs232_INCLUDED
-#define rs232_INCLUDED
+#ifndef _RS232_H
+#define _RS232_H
 
 #ifdef __cplusplus
 extern "C" {
@@ -49,6 +49,6 @@ void RS232_flushRXTX(int);
 } /* extern "C" */
 #endif
 
-#endif
+#endif _RS232_H
 
 

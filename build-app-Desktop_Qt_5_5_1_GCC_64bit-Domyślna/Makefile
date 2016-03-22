@@ -111,6 +111,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named FreenectDriver
+
+# Build rule for target.
+FreenectDriver: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 FreenectDriver
+.PHONY : FreenectDriver
+
+# fast build rule for target.
+FreenectDriver/fast:
+	$(MAKE) -f CMakeFiles/FreenectDriver.dir/build.make CMakeFiles/FreenectDriver.dir/build
+.PHONY : FreenectDriver/fast
+
+#=============================================================================
 # Target rules for targets named app
 
 # Build rule for target.
@@ -150,6 +163,33 @@ main.cpp.s:
 	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+src/serial.o: src/serial.cpp.o
+
+.PHONY : src/serial.o
+
+# target to build an object file
+src/serial.cpp.o:
+	$(MAKE) -f CMakeFiles/FreenectDriver.dir/build.make CMakeFiles/FreenectDriver.dir/src/serial.cpp.o
+.PHONY : src/serial.cpp.o
+
+src/serial.i: src/serial.cpp.i
+
+.PHONY : src/serial.i
+
+# target to preprocess a source file
+src/serial.cpp.i:
+	$(MAKE) -f CMakeFiles/FreenectDriver.dir/build.make CMakeFiles/FreenectDriver.dir/src/serial.cpp.i
+.PHONY : src/serial.cpp.i
+
+src/serial.s: src/serial.cpp.s
+
+.PHONY : src/serial.s
+
+# target to generate assembly for a file
+src/serial.cpp.s:
+	$(MAKE) -f CMakeFiles/FreenectDriver.dir/build.make CMakeFiles/FreenectDriver.dir/src/serial.cpp.s
+.PHONY : src/serial.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -157,11 +197,15 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
+	@echo "... FreenectDriver"
 	@echo "... edit_cache"
 	@echo "... app"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... src/serial.o"
+	@echo "... src/serial.i"
+	@echo "... src/serial.s"
 .PHONY : help
 
 

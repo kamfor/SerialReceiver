@@ -4,16 +4,19 @@
 class Element{
 
 private:
+
 	enum value{}; 
 	Element(); 
 	~Element(); 
+
 public:
+
 	void set(void); 
-	void get(): 
+    void get();
 }; 
 
 
 
 
 
-#endif
+#endif //_ELEMENT_H
