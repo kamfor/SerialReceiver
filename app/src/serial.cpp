@@ -2,77 +2,110 @@
 #include "../include/serial.h"
 using namespace std;
 
-Status::value Status::get(){
-    return v;
+void Status::set(const string){
+
 }
 
-void Status::set(value status){
-    v = status;
+const string Status::getstring(){
+
 }
 
-Parity::value Parity::get(){
-    return v;
+int Status::getint(){
+
 }
 
-void Parity::set(value parity){
-    v = parity;
+void Parity::set(const string){
+
 }
 
-BaudRate::value BaudRate::get(){
-    return v;
+const string Parity::getstring(){
+
 }
 
-void StopBits::set(value stopbits){
-    v = stopbits;
+int Parity::getint(){
+
 }
 
-StopBits::value StopBits::get(){
-    return v;
+void BaudRate::set(const string){
+
 }
 
-void BaudRate::set(value baudrate){
-    v = baudrate;
+const string BaudRate::getstring(){
+
 }
 
-SerialError::value SerialError::get(){
-    return v;
+int BaudRate::getint(){
+
 }
 
-void SerialError::set(value serialerror){
-    v = serialerror;
+void StopBits::set(const string){
+
 }
 
-DataBits::value DataBits::get(){
-    return v;
+const string StopBits::getstring(){
+
 }
 
-void DataBits::set(value databits){
-    v = databits;
+int StopBits::getint(){
+
 }
 
-FlowControl::value FlowControl::get(){
-    return v;
+void SerialError::set(const string){
+
 }
 
-void FlowControl::set(value flowcontrol){
-    v = flowcontrol;
+const string SerialError::getstring(){
+
 }
 
-PortName::value PortName::get(){
-    return v;
+int SerialError::getint(){
+
 }
 
-void PortName::set(value portname){
-    v = portname;
+void DataBits::set(const string){
+
+}
+
+const string DataBits::getstring(){
+
+}
+
+int DataBits::getint(){
+
+}
+
+void FlowControl::set(const string){
+
+}
+
+const string FlowControl::getstring(){
+
+}
+
+int FlowControl::getint(){
+
+}
+
+void PortName::set(const string){
+
+}
+
+const string PortName::getstring(){
+
+}
+
+int PortName::getint(){
+
 }
 
 
-SerialPort::SerialPort(BaudRate baudrate, Parity parity, StopBits stopbits, DataBits databits, PortName portname, FlowControl flowcontrol){
+SerialPort::SerialPort(const string baudrate, const string parity, const string stopbits, const string databits, const string portname, const string flowcontrol){
+
 
 }
 
 SerialPort::~SerialPort(){
-
+    this->disconnect();
 }
 
 Status SerialPort::connect(){
