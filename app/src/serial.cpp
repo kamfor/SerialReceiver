@@ -2,11 +2,19 @@
 #include "../include/serial.h"
 using namespace std;
 
-void Status::set(const string){
+void Status::set(const string input){
 
+    current = value.find(input);
+    if(current == value.end()){
+        SerialError error;
+        error.set("InvalidStatus");
+        throw error;
+    }
 }
 
 const string Status::getstring(){
+
+    cout<<current->first<<endl;
 
 }
 
@@ -50,7 +58,9 @@ int StopBits::getint(){
 
 }
 
-void SerialError::set(const string){
+void SerialError::set(const string input){
+
+  current = value.find(input);
 
 }
 

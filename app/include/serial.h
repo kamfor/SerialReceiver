@@ -3,6 +3,7 @@
 
 #include<iostream>
 #include<unordered_map>
+#include<string>
 using namespace std;
 
 #include "rs232.h"
@@ -17,6 +18,8 @@ private:
         {"Disconnected" , 1},
         {"Error", 2}
     };
+
+    unordered_map<string, const int>::const_iterator current;
 
 
 public:
@@ -39,6 +42,8 @@ private:
         {"MarkParity", 4},
         {"UnknownParity", 5}
     };
+
+    unordered_map<string, const int>::iterator cur;
 
 public:
 
@@ -76,6 +81,8 @@ private:
         {"Baud4000000", 4000000}
     };
 
+    unordered_map<string, const int>::iterator cur;
+
 public:
 
     void set(const string);
@@ -94,6 +101,8 @@ private:
         {"TwoStop", 2},
         {"UnknownStop", 3}
     };
+
+    unordered_map<string, const int>::iterator cur;
 
 public:
 
@@ -117,8 +126,11 @@ private:
         {"InvalidDataBits", 7},
         {"InvalidParity", 8},
         {"InvalidStopBits", 9},
-        {"UnableToGetPortStatus", 10}
+        {"UnableToGetPortStatus", 10},
+        {"InvalidStatus", 11}
     };
+
+    unordered_map<string, const int>::const_iterator current;
 
 public:
 
@@ -139,6 +151,8 @@ private:
         {"UnknownDataBits", 4}
     };
 
+   unordered_map<string, const int>::iterator cur;
+
 public:
 
     void set(const string);
@@ -156,6 +170,8 @@ private:
         {"SoftwareControl", 2},
         {"UnknownFlowControl", 3}
     };
+
+    unordered_map<string, const int>::iterator cur;
 
 public:
 
@@ -222,6 +238,8 @@ private:
         {"COM13", 51},
         {"COM14", 52}
     };
+
+    unordered_map<string, const int>::iterator cur;
 
 public:
 
