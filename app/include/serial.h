@@ -43,7 +43,7 @@ private:
         {"UnknownParity", 5}
     };
 
-    unordered_map<string, const int>::iterator cur;
+    unordered_map<string, const int>::const_iterator current;
 
 public:
 
@@ -81,7 +81,7 @@ private:
         {"Baud4000000", 4000000}
     };
 
-    unordered_map<string, const int>::iterator cur;
+    unordered_map<string, const int>::const_iterator current;
 
 public:
 
@@ -102,7 +102,7 @@ private:
         {"UnknownStop", 3}
     };
 
-    unordered_map<string, const int>::iterator cur;
+    unordered_map<string, const int>::const_iterator current;
 
 public:
 
@@ -151,7 +151,7 @@ private:
         {"UnknownDataBits", 4}
     };
 
-   unordered_map<string, const int>::iterator cur;
+   unordered_map<string, const int>::const_iterator current;
 
 public:
 
@@ -171,7 +171,7 @@ private:
         {"UnknownFlowControl", 3}
     };
 
-    unordered_map<string, const int>::iterator cur;
+    unordered_map<string, const int>::const_iterator current;
 
 public:
 
@@ -239,7 +239,7 @@ private:
         {"COM14", 52}
     };
 
-    unordered_map<string, const int>::iterator cur;
+    unordered_map<string, const int>::const_iterator current;
 
 public:
 

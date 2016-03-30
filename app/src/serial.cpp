@@ -14,35 +14,58 @@ void Status::set(const string input){
 
 const string Status::getstring(){
 
-    cout<<current->first<<endl;
+    return current->first;
 
 }
 
 int Status::getint(){
 
+    return current->second;
+
 }
 
-void Parity::set(const string){
+void Parity::set(const string input){
+
+    current = value.find(input);
+    if(current == value.end()){
+        SerialError error;
+        error.set("InvalidParity");
+        throw error;
+    }
 
 }
 
 const string Parity::getstring(){
 
+    return current->first;
 }
 
 int Parity::getint(){
 
+    return current->second;
+
 }
 
-void BaudRate::set(const string){
+void BaudRate::set(const string input){
+
+    current = value.find(input);
+    if(current == value.end()){
+        SerialError error;
+        error.set("InvalidBaudRate");
+        throw error;
+    }
 
 }
 
 const string BaudRate::getstring(){
 
+    return current->first;
+
 }
 
 int BaudRate::getint(){
+
+    return current->second;
 
 }
 
