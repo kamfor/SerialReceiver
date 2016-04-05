@@ -2,17 +2,15 @@
 #include "../include/serial.h"
 using namespace std;
 
-class Element{
+class Element{ // klasa zawierająca elementy powtarzające się w klasach potomnych.
 	
-
-
 	void set(const string);
     const string getstring();
     int getint();
     
 }
 
-const string Element::getstring(){
+const string Element::getstring(){ 
 	
 	return current->first;
 }
