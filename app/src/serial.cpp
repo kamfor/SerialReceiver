@@ -176,12 +176,18 @@ int PortName::getint(){
 
 
 SerialPort::SerialPort(const string baudrate, const string parity, const string stopbits, const string databits, const string portname, const string flowcontrol){
+	
+    baudrate.set(baudrate);
+    parity.set(parity); 
+    stopbits.set(stopbits);
+    portname.set(portname);
+    databits.set(;
 
 
 }
 
 SerialPort::~SerialPort(){
-    this->disconnect();
+	this->disconnect();
 }
 
 Status SerialPort::connect(){
