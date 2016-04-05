@@ -9,7 +9,21 @@ using namespace std;
 #include "rs232.h"
 #include "buffer.h"
 
-class Status{
+class Element{
+	
+private:
+	
+	unordered_map<string, const int>::const_iterator current;
+	
+public:
+
+	void set(const string);
+    const string getstring();
+    int getint();
+    
+}
+    
+class Status : Element{
 
 private:
 
@@ -30,7 +44,7 @@ public:
 
 };
 
-class Parity{
+class Parity : Element{
 
 private:
 
@@ -52,7 +66,7 @@ public:
     int getint();
 };
 
-class BaudRate{
+class BaudRate : Element{
 
 private:
 
@@ -91,7 +105,7 @@ public:
 
 };
 
-class StopBits{
+class StopBits : Element{
 
 private:
 
@@ -111,7 +125,7 @@ public:
     int getint();
 };
 
-class SerialError{
+class SerialError : Element{
 
 private:
 
@@ -139,7 +153,7 @@ public:
     int getint();
 };
 
-class DataBits{
+class DataBits : Element{
 
 private:
 
@@ -160,7 +174,7 @@ public:
     int getint();
 };
 
-class FlowControl{
+class FlowControl : Element{
 
 private:
 
@@ -180,7 +194,7 @@ public:
     int getint();
 };
 
-class PortName{
+class PortName : Element{
 
 private:
 

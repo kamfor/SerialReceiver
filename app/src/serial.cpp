@@ -2,6 +2,26 @@
 #include "../include/serial.h"
 using namespace std;
 
+class Element{
+	
+
+
+	void set(const string);
+    const string getstring();
+    int getint();
+    
+}
+
+const string Element::getstring(){
+	
+	return current->first;
+}
+
+int Element::getint(){
+	
+	return current->second;
+}
+
 void Status::set(const string input){
 
     current = value.find(input);
@@ -66,19 +86,26 @@ const string BaudRate::getstring(){
 int BaudRate::getint(){
 
     return current->second;
-
 }
 
 void StopBits::set(const string){
-
+	
+	 current = value.find(input);
+	 if(current == value.end()){
+		SerialError error;
+		error.set("InvalidStopBits");
+		throw error;
+    }
 }
 
 const string StopBits::getstring(){
-
+	
+	return current->first;
 }
 
 int StopBits::getint(){
-
+	
+	return current->second;
 }
 
 void SerialError::set(const string input){
@@ -96,7 +123,13 @@ int SerialError::getint(){
 }
 
 void DataBits::set(const string){
-
+	
+	current = value.find(input);
+    if(current == value.end()){
+        SerialError error;
+        error.set("InvalidDataBits");
+        throw error;
+    }
 }
 
 const string DataBits::getstring(){
@@ -108,7 +141,13 @@ int DataBits::getint(){
 }
 
 void FlowControl::set(const string){
-
+    
+    current = value.find(input);
+    if(current == value.end()){
+        SerialError error;
+        error.set("InvalidFlowControl");
+        throw error;
+    }
 }
 
 const string FlowControl::getstring(){
@@ -120,7 +159,13 @@ int FlowControl::getint(){
 }
 
 void PortName::set(const string){
-
+    
+    current = value.find(input);
+    if(current == value.end()){
+        SerialError error;
+        error.set("InvalidPortName");
+        throw error;
+    }
 }
 
 const string PortName::getstring(){
