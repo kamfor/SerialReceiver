@@ -16,13 +16,12 @@ int Element::getint(){
 
 void Status::set(const string input){
 
-    //current = value.find(input);
-    //if(current == value.end()){
-     //   SerialError error;
-     //   error.set("InvalidStatus");
-     //   throw error;
-    //}
-    cout<<input<<endl;
+    current = value.find(input);
+    if(current == value.end()){
+       SerialError error;
+       error.set("InvalidStatus");
+       throw error;
+    }
 }
 
 void Parity::set(const string input){

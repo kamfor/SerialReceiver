@@ -9,6 +9,10 @@ int main(int argc, char *argv[])
 
     pierwszy.set("dziala");
 
+    int liczba = pierwszy.getint();
+
+    cout<<liczba<<endl;
+
     cout << "Hello World!" << endl;
     return 0;
 }
