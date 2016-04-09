@@ -111,17 +111,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named FreenectDriver
+# Target rules for targets named main
 
 # Build rule for target.
-FreenectDriver: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 FreenectDriver
-.PHONY : FreenectDriver
+main: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 main
+.PHONY : main
 
 # fast build rule for target.
-FreenectDriver/fast:
-	$(MAKE) -f CMakeFiles/FreenectDriver.dir/build.make CMakeFiles/FreenectDriver.dir/build
-.PHONY : FreenectDriver/fast
+main/fast:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
+.PHONY : main/fast
 
 #=============================================================================
 # Target rules for targets named app
@@ -142,6 +142,7 @@ main.o: main.cpp.o
 
 # target to build an object file
 main.cpp.o:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cpp.o
 	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/main.cpp.o
 .PHONY : main.cpp.o
 
@@ -151,6 +152,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cpp.i
 	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/main.cpp.i
 .PHONY : main.cpp.i
 
@@ -160,6 +162,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cpp.s
 	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/main.cpp.s
 .PHONY : main.cpp.s
 
@@ -169,7 +172,7 @@ src/rs232.o: src/rs232.c.o
 
 # target to build an object file
 src/rs232.c.o:
-	$(MAKE) -f CMakeFiles/FreenectDriver.dir/build.make CMakeFiles/FreenectDriver.dir/src/rs232.c.o
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/rs232.c.o
 .PHONY : src/rs232.c.o
 
 src/rs232.i: src/rs232.c.i
@@ -178,7 +181,7 @@ src/rs232.i: src/rs232.c.i
 
 # target to preprocess a source file
 src/rs232.c.i:
-	$(MAKE) -f CMakeFiles/FreenectDriver.dir/build.make CMakeFiles/FreenectDriver.dir/src/rs232.c.i
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/rs232.c.i
 .PHONY : src/rs232.c.i
 
 src/rs232.s: src/rs232.c.s
@@ -187,7 +190,7 @@ src/rs232.s: src/rs232.c.s
 
 # target to generate assembly for a file
 src/rs232.c.s:
-	$(MAKE) -f CMakeFiles/FreenectDriver.dir/build.make CMakeFiles/FreenectDriver.dir/src/rs232.c.s
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/rs232.c.s
 .PHONY : src/rs232.c.s
 
 src/serial.o: src/serial.cpp.o
@@ -196,7 +199,7 @@ src/serial.o: src/serial.cpp.o
 
 # target to build an object file
 src/serial.cpp.o:
-	$(MAKE) -f CMakeFiles/FreenectDriver.dir/build.make CMakeFiles/FreenectDriver.dir/src/serial.cpp.o
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/serial.cpp.o
 .PHONY : src/serial.cpp.o
 
 src/serial.i: src/serial.cpp.i
@@ -205,7 +208,7 @@ src/serial.i: src/serial.cpp.i
 
 # target to preprocess a source file
 src/serial.cpp.i:
-	$(MAKE) -f CMakeFiles/FreenectDriver.dir/build.make CMakeFiles/FreenectDriver.dir/src/serial.cpp.i
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/serial.cpp.i
 .PHONY : src/serial.cpp.i
 
 src/serial.s: src/serial.cpp.s
@@ -214,7 +217,7 @@ src/serial.s: src/serial.cpp.s
 
 # target to generate assembly for a file
 src/serial.cpp.s:
-	$(MAKE) -f CMakeFiles/FreenectDriver.dir/build.make CMakeFiles/FreenectDriver.dir/src/serial.cpp.s
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/serial.cpp.s
 .PHONY : src/serial.cpp.s
 
 # Help Target
@@ -224,8 +227,8 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
-	@echo "... FreenectDriver"
 	@echo "... edit_cache"
+	@echo "... main"
 	@echo "... app"
 	@echo "... main.o"
 	@echo "... main.i"
