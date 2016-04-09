@@ -4,10 +4,10 @@
 #include<iostream>
 #include<unordered_map>
 #include<string>
-using namespace std;
-
 #include "rs232.h"
 #include "buffer.h"
+
+using namespace std;
 
 class Element{
 
