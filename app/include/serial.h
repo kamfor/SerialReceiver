@@ -10,20 +10,15 @@ using namespace std;
 #include "buffer.h"
 
 class Element{
-	
-private:
-	
-	unordered_map<string, const int>::const_iterator current;
-	
+
 public:
 
-	void set(const string);
+    unordered_map<string, const int>::const_iterator current;
     const string getstring();
     int getint();
-    
 };
-    
-class Status : Element{
+
+class Status : public Element{
 
 private:
 
@@ -33,15 +28,13 @@ private:
         {"Error", 2}
     };
 
-    unordered_map<string, const int>::const_iterator current;
-
-
 public:
 
-    void set(const string);
-    const string getstring();
-    int getint();
+    Status(){
+        cout<<"created"<<endl;
+    }
 
+    void set(const string);
 };
 
 class Parity : Element{

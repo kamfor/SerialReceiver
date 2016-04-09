@@ -1,5 +1,6 @@
 #include <iostream>
 #include "../include/serial.h"
+
 using namespace std;
 
 
@@ -15,24 +16,13 @@ int Element::getint(){
 
 void Status::set(const string input){
 
-    current = value.find(input);
-    if(current == value.end()){
-        SerialError error;
-        error.set("InvalidStatus");
-        throw error;
-    }
-}
-
-const string Status::getstring(){
-
-    return current->first;
-
-}
-
-int Status::getint(){
-
-    return current->second;
-
+    //current = value.find(input);
+    //if(current == value.end()){
+     //   SerialError error;
+     //   error.set("InvalidStatus");
+     //   throw error;
+    //}
+    cout<<input<<endl;
 }
 
 void Parity::set(const string input){
