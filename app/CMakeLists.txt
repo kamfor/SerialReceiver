@@ -1,8 +1,0 @@
-project(app)
-cmake_minimum_required(VERSION 2.8)
-aux_source_directory(. SRC_LIST)
-add_executable(${PROJECT_NAME} ${SRC_LIST})
-file(GLOB HEADERS include/*.hpp include/*.h)
-file(GLOB SOURCES src/*.cpp src/*.c)
-add_library(FreenectDriver SHARED ${HEADERS} ${SOURCES})
-add_definitions(-std=c++14)
