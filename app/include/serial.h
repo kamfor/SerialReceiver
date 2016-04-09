@@ -21,7 +21,7 @@ public:
     const string getstring();
     int getint();
     
-}
+};
     
 class Status : Element{
 
@@ -272,6 +272,7 @@ private:
     StopBits stopbits;
     PortName portname;
     DataBits databits;
+    FlowControl flowcontrol;
     //Buffer buffer;
 
 public:

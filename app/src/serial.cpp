@@ -2,13 +2,6 @@
 #include "../include/serial.h"
 using namespace std;
 
-class Element{ // klasa zawierająca elementy powtarzające się w klasach potomnych.
-	
-	void set(const string);
-    const string getstring();
-    int getint();
-    
-}
 
 const string Element::getstring(){ 
 	
@@ -86,7 +79,7 @@ int BaudRate::getint(){
     return current->second;
 }
 
-void StopBits::set(const string){
+void StopBits::set(const string input){
 	
 	 current = value.find(input);
 	 if(current == value.end()){
@@ -120,7 +113,7 @@ int SerialError::getint(){
 
 }
 
-void DataBits::set(const string){
+void DataBits::set(const string input){
 	
 	current = value.find(input);
     if(current == value.end()){
@@ -138,7 +131,7 @@ int DataBits::getint(){
 
 }
 
-void FlowControl::set(const string){
+void FlowControl::set(const string input){
     
     current = value.find(input);
     if(current == value.end()){
@@ -156,7 +149,7 @@ int FlowControl::getint(){
 
 }
 
-void PortName::set(const string){
+void PortName::set(const string input){
     
     current = value.find(input);
     if(current == value.end()){
@@ -175,13 +168,14 @@ int PortName::getint(){
 }
 
 
-SerialPort::SerialPort(const string baudrate, const string parity, const string stopbits, const string databits, const string portname, const string flowcontrol){
+SerialPort::SerialPort(const string baud, const string par, const string stop, const string data, const string port, const string flow){
 	
-    baudrate.set(baudrate);
-    parity.set(parity); 
-    stopbits.set(stopbits);
-    portname.set(portname);
-    databits.set(;
+    baudrate.set(baud);
+    parity.set(par);
+    stopbits.set(stop);
+    databits.set(data);
+    portname.set(port);
+    flowcontrol.set(flow);
 
 
 }
