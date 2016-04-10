@@ -35,17 +35,6 @@ void Parity::set(const string input){
 
 }
 
-const string Parity::getstring(){
-
-    return current->first;
-}
-
-int Parity::getint(){
-
-    return current->second;
-
-}
-
 void BaudRate::set(const string input){
 
     current = value.find(input);
@@ -55,17 +44,6 @@ void BaudRate::set(const string input){
         throw error;
     }
 
-}
-
-const string BaudRate::getstring(){
-
-    return current->first;
-
-}
-
-int BaudRate::getint(){
-
-    return current->second;
 }
 
 void StopBits::set(const string input){
@@ -78,27 +56,9 @@ void StopBits::set(const string input){
     }
 }
 
-const string StopBits::getstring(){
-	
-	return current->first;
-}
-
-int StopBits::getint(){
-	
-	return current->second;
-}
-
 void SerialError::set(const string input){
 
   current = value.find(input);
-
-}
-
-const string SerialError::getstring(){
-
-}
-
-int SerialError::getint(){
 
 }
 
@@ -112,14 +72,6 @@ void DataBits::set(const string input){
     }
 }
 
-const string DataBits::getstring(){
-
-}
-
-int DataBits::getint(){
-
-}
-
 void FlowControl::set(const string input){
     
     current = value.find(input);
@@ -128,14 +80,6 @@ void FlowControl::set(const string input){
         error.set("InvalidFlowControl");
         throw error;
     }
-}
-
-const string FlowControl::getstring(){
-
-}
-
-int FlowControl::getint(){
-
 }
 
 void PortName::set(const string input){
@@ -148,15 +92,6 @@ void PortName::set(const string input){
     }
 }
 
-const string PortName::getstring(){
-
-}
-
-int PortName::getint(){
-
-}
-
-
 SerialPort::SerialPort(const string baud, const string par, const string stop, const string data, const string port, const string flow){
 	
     baudrate.set(baud);
@@ -166,6 +101,12 @@ SerialPort::SerialPort(const string baud, const string par, const string stop, c
     portname.set(port);
     flowcontrol.set(flow);
 
+    cout<<baudrate.getstring()<<endl;
+    cout<<parity.getstring()<<endl;
+    cout<<stopbits.getstring()<<endl;
+    cout<<databits.getstring()<<endl;
+    cout<<portname.getstring()<<endl;
+    cout<<flowcontrol.getstring()<<endl;
 
 }
 

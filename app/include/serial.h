@@ -30,14 +30,10 @@ private:
 
 public:
 
-    Status(){
-        cout<<"created"<<endl;
-    }
-
     void set(const string);
 };
 
-class Parity : Element{
+class Parity : public Element{
 
 private:
 
@@ -50,16 +46,13 @@ private:
         {"UnknownParity", 5}
     };
 
-    unordered_map<string, const int>::const_iterator current;
 
 public:
 
     void set(const string);
-    const string getstring();
-    int getint();
 };
 
-class BaudRate : Element{
+class BaudRate : public Element{
 
 private:
 
@@ -88,17 +81,12 @@ private:
         {"Baud4000000", 4000000}
     };
 
-    unordered_map<string, const int>::const_iterator current;
-
 public:
 
     void set(const string);
-    const string getstring();
-    int getint();
-
 };
 
-class StopBits : Element{
+class StopBits : public Element{
 
 private:
 
@@ -109,16 +97,12 @@ private:
         {"UnknownStop", 3}
     };
 
-    unordered_map<string, const int>::const_iterator current;
-
 public:
 
     void set(const string);
-    const string getstring();
-    int getint();
 };
 
-class SerialError : Element{
+class SerialError :public Element{
 
 private:
 
@@ -137,16 +121,12 @@ private:
         {"InvalidStatus", 11}
     };
 
-    unordered_map<string, const int>::const_iterator current;
-
 public:
 
     void set(const string);
-    const string getstring();
-    int getint();
 };
 
-class DataBits : Element{
+class DataBits : public Element{
 
 private:
 
@@ -158,16 +138,12 @@ private:
         {"UnknownDataBits", 4}
     };
 
-   unordered_map<string, const int>::const_iterator current;
-
 public:
 
     void set(const string);
-    const string getstring();
-    int getint();
 };
 
-class FlowControl : Element{
+class FlowControl : public Element{
 
 private:
 
@@ -178,16 +154,12 @@ private:
         {"UnknownFlowControl", 3}
     };
 
-    unordered_map<string, const int>::const_iterator current;
-
 public:
 
     void set(const string);
-    const string getstring();
-    int getint();
 };
 
-class PortName : Element{
+class PortName : public Element{
 
 private:
 
@@ -246,13 +218,9 @@ private:
         {"COM14", 52}
     };
 
-    unordered_map<string, const int>::const_iterator current;
-
 public:
 
     void set(const string);
-    const string getstring();
-    int getint();
 };
 
 class SerialPort{
@@ -269,6 +237,7 @@ private:
     //Buffer buffer;
 
 public:
+
 
     SerialPort(const string, const string, const string, const string, const string, const string);
     ~SerialPort();

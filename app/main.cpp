@@ -5,13 +5,7 @@ using namespace std;
 
 int main(int argc, char *argv[])
 {
-    Status pierwszy;
-
-    pierwszy.set("dziala");
-
-    int liczba = pierwszy.getint();
-
-    cout<<liczba<<endl;
+    SerialPort connection("Baud9600", "NoParity", "OneStop", "Data8", "ttyS0", "NoFlowControl");
 
     cout << "Hello World!" << endl;
     return 0;
