@@ -41,9 +41,7 @@ private:
         {"NoParity", 0},
         {"EvenParity", 1},
         {"OddParity", 2},
-        {"SpaceParity", 3},
-        {"MarkParity", 4},
-        {"UnknownParity", 5}
+        {"UnknownParity", 3}
     };
 
 
@@ -92,9 +90,8 @@ private:
 
     const unordered_map<string,const int> value = {
         {"OneStop", 0},
-        {"OneAndHalfStop", 1},
-        {"TwoStop", 2},
-        {"UnknownStop", 3}
+        {"TwoStop", 1},
+        {"UnknownStop", 2}
     };
 
 public:
@@ -131,11 +128,11 @@ class DataBits : public Element{
 private:
 
    const unordered_map<string,const int> value = {
-        {"Data5", 0},
-        {"Data6", 1},
-        {"Data7", 2},
-        {"Data8", 3},
-        {"UnknownDataBits", 4}
+        {"Data5", 5},
+        {"Data6", 6},
+        {"Data7", 7},
+        {"Data8", 8},
+        {"UnknownDataBits", 0}
     };
 
 public:
