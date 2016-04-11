@@ -1,4 +1,3 @@
-
 #ifndef _RS232_H
 #define _RS232_H
 
@@ -8,8 +7,7 @@ extern "C" {
 
 #include <stdio.h>
 #include <string.h>
-
-
+#include <stdlib.h>
 
 #if defined(__linux__) || defined(__FreeBSD__)
 
