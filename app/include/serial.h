@@ -220,6 +220,20 @@ public:
     void set(const string);
 };
 
+class Buffer{
+
+private:
+
+    char data[];
+    char terminator;
+
+public:
+
+    unsigned char* fill();
+    void flush();
+    void show();
+};
+
 class SerialPort{
 
 private:
@@ -231,7 +245,7 @@ private:
     PortName portname;
     DataBits databits;
     FlowControl flowcontrol;
-    //Buffer buffer;
+    Buffer buffer;
 
 public:
 
@@ -240,6 +254,7 @@ public:
     ~SerialPort();
     Status connect();
     Status disconnect();
+    int receive();
 };
 
 #endif //_SERIAL_H

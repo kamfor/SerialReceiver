@@ -125,3 +125,8 @@ Status SerialPort::disconnect(){
     return status;
 }
 
+int SerialPort::receive(){
+
+    return 0;
+}
+
