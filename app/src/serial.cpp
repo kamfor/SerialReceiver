@@ -122,6 +122,8 @@ Status SerialPort::connect(){ //functions from rs232.c
 
 Status SerialPort::disconnect(){
 
+    RS232_CloseComport(portname.getint());
+
     return status;
 }
 

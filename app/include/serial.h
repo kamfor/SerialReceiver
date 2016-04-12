@@ -229,6 +229,7 @@ private:
 
 public:
 
+    Buffer(int);
     unsigned char* fill();
     void flush();
     void show();
