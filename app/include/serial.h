@@ -224,12 +224,14 @@ class Buffer{
 
 private:
 
-    char data[];
+    unsigned char * data;
     char terminator;
+    int size;
 
 public:
 
-    Buffer(int);
+    Buffer(int, char);
+    ~Buffer();
     unsigned char* fill();
     void flush();
     void show();
@@ -246,7 +248,6 @@ private:
     PortName portname;
     DataBits databits;
     FlowControl flowcontrol;
-    Buffer buffer;
 
 public:
 
@@ -255,7 +256,7 @@ public:
     ~SerialPort();
     Status connect();
     Status disconnect();
-    int receive();
+    int receive(unsigned char *);
 };
 
 #endif //_SERIAL_H
