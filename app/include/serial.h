@@ -31,6 +31,7 @@ private:
 public:
 
     void set(const string);
+    void showoptions();
 };
 
 class Parity : public Element{
@@ -48,6 +49,7 @@ private:
 public:
 
     void set(const string);
+    void showoptions();
 };
 
 class BaudRate : public Element{
@@ -82,6 +84,7 @@ private:
 public:
 
     void set(const string);
+    void showoptions();
 };
 
 class StopBits : public Element{
@@ -97,6 +100,7 @@ private:
 public:
 
     void set(const string);
+    void showoptions();
 };
 
 class SerialError :public Element{
@@ -121,6 +125,7 @@ private:
 public:
 
     void set(const string);
+    void showoptions();
 };
 
 class DataBits : public Element{
@@ -138,6 +143,7 @@ private:
 public:
 
     void set(const string);
+    void showoptions();
 };
 
 class FlowControl : public Element{
@@ -154,13 +160,15 @@ private:
 public:
 
     void set(const string);
+    void showoptions();
 };
 
 class PortName : public Element{
 
 private:
 
-    const unordered_map<string,const int> value = {
+    #if defined(__linux__) || defined(__FreeBSD__)
+    const unordered_map<string,const int> value= {
         {"ttyS0", 0},
         {"ttyS1", 1},
         {"ttyS2", 2},
@@ -198,7 +206,12 @@ private:
         {"cuaU0", 35},
         {"cuaU1", 36},
         {"cuaU2", 37},
-        {"cuaU3", 38},
+        {"cuaU3", 38}
+    };
+
+    #else
+
+    const unordered_map<string,const int> value= {,
         {"COM1", 39},
         {"COM2", 40},
         {"COM3", 41},
@@ -215,9 +228,12 @@ private:
         {"COM14", 52}
     };
 
+    #endif
+
 public:
 
     void set(const string);
+    void showoptions();
 };
 
 class Buffer{
@@ -239,7 +255,7 @@ public:
 
 class SerialPort{
 
-private:
+public:
 
     Status status;
     Parity parity;
@@ -248,9 +264,6 @@ private:
     PortName portname;
     DataBits databits;
     FlowControl flowcontrol;
-
-public:
-
 
     SerialPort(const string, const string, const string, const string, const string, const string);
     ~SerialPort();

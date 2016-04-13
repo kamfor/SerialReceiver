@@ -25,6 +25,7 @@ void Status::set(const string input){
     }
 }
 
+
 void Parity::set(const string input){
 
     current = value.find(input);
@@ -34,6 +35,15 @@ void Parity::set(const string input){
         throw error;
     }
 
+}
+
+void Parity::showoptions(){
+
+    for(current =value.begin(); current!=value.end(); ++current){
+
+        cout<<current->first<<": "<<current->second<<endl;
+    }
+    cout<<endl;
 }
 
 void BaudRate::set(const string input){
@@ -47,6 +57,15 @@ void BaudRate::set(const string input){
 
 }
 
+void BaudRate::showoptions(){
+
+    for(current =value.begin(); current!=value.end(); ++current){
+
+        cout<<current->first<<": "<<current->second<<endl;
+    }
+    cout<<endl;
+}
+
 void StopBits::set(const string input){
 	
 	 current = value.find(input);
@@ -55,6 +74,15 @@ void StopBits::set(const string input){
 		error.set("InvalidStopBits");
 		throw error;
     }
+}
+
+void StopBits::showoptions(){
+
+    for(current =value.begin(); current!=value.end(); ++current){
+
+        cout<<current->first<<": "<<current->second<<endl;
+    }
+    cout<<endl;
 }
 
 void SerialError::set(const string input){
@@ -73,6 +101,15 @@ void DataBits::set(const string input){
     }
 }
 
+void DataBits::showoptions(){
+
+    for(current =value.begin(); current!=value.end(); ++current){
+
+        cout<<current->first<<": "<<current->second<<endl;
+    }
+    cout<<endl;
+}
+
 void FlowControl::set(const string input){
     
     current = value.find(input);
@@ -83,6 +120,15 @@ void FlowControl::set(const string input){
     }
 }
 
+void FlowControl::showoptions(){
+
+    for(current =value.begin(); current!=value.end(); ++current){
+
+        cout<<current->first<<": "<<current->second<<endl;
+    }
+    cout<<endl;
+}
+
 void PortName::set(const string input){
     
     current = value.find(input);
@@ -91,6 +137,15 @@ void PortName::set(const string input){
         error.set("InvalidPortName");
         throw error;
     }
+}
+
+void PortName::showoptions(){
+
+    for(current =value.begin(); current!=value.end(); ++current){
+
+        cout<<current->first<<": "<<current->second<<endl;
+    }
+    cout<<endl;
 }
 
 Buffer::Buffer(int nofbytes, char ter){
