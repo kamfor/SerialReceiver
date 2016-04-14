@@ -30,7 +30,7 @@ private:
 
 public:
 
-    void set(const string);
+    int set(const string);
     void showoptions();
 };
 
@@ -48,7 +48,7 @@ private:
 
 public:
 
-    void set(const string);
+    int set(const string);
     void showoptions();
 };
 
@@ -83,7 +83,7 @@ private:
 
 public:
 
-    void set(const string);
+    int set(const string);
     void showoptions();
 };
 
@@ -99,7 +99,7 @@ private:
 
 public:
 
-    void set(const string);
+    int set(const string);
     void showoptions();
 };
 
@@ -124,7 +124,7 @@ private:
 
 public:
 
-    void set(const string);
+    int set(const string);
     void showoptions();
 };
 
@@ -142,7 +142,7 @@ private:
 
 public:
 
-    void set(const string);
+    int set(const string);
     void showoptions();
 };
 
@@ -159,7 +159,7 @@ private:
 
 public:
 
-    void set(const string);
+    int set(const string);
     void showoptions();
 };
 
@@ -232,7 +232,7 @@ private:
 
 public:
 
-    void set(const string);
+    int set(const string);
     void showoptions();
 };
 

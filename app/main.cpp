@@ -15,8 +15,9 @@ int main()
 
     cout<<"Type baudrate name from list below\n"<<endl;
     connection.baudrate.showoptions();
-    cin>>i;
-    connection.baudrate.set(i);
+    do{
+        cin>>i;
+    } while(connection.baudrate.set(i));
 
     cout<<"Type parity type name from list below\n"<<endl;
     connection.parity.showoptions();

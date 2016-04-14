@@ -15,26 +15,21 @@ int Element::getint(){
 	return current->second;
 }
 
-void Status::set(const string input){
+int Status::set(const string input){
 
     current = value.find(input);
-    if(current == value.end()){
-       SerialError error;
-       error.set("InvalidStatus");
-       throw error;
-    }
+    if(current == value.end())return 1;
+
+    return 0;
 }
 
 
-void Parity::set(const string input){
+int Parity::set(const string input){
 
     current = value.find(input);
-    if(current == value.end()){
-        SerialError error;
-        error.set("InvalidParity");
-        throw error;
-    }
+    if(current == value.end())return 1;
 
+    return 0;
 }
 
 void Parity::showoptions(){
@@ -46,14 +41,12 @@ void Parity::showoptions(){
     cout<<endl;
 }
 
-void BaudRate::set(const string input){
+int BaudRate::set(const string input){
 
     current = value.find(input);
-    if(current == value.end()){
-        SerialError error;
-        error.set("InvalidBaudRate");
-        throw error;
-    }
+    if(current == value.end())return 1;
+
+    return 0;
 
 }
 
@@ -66,14 +59,12 @@ void BaudRate::showoptions(){
     cout<<endl;
 }
 
-void StopBits::set(const string input){
+int StopBits::set(const string input){
 	
 	 current = value.find(input);
-	 if(current == value.end()){
-		SerialError error;
-		error.set("InvalidStopBits");
-		throw error;
-    }
+     if(current == value.end())return 1;
+
+     return 0;
 }
 
 void StopBits::showoptions(){
@@ -85,20 +76,20 @@ void StopBits::showoptions(){
     cout<<endl;
 }
 
-void SerialError::set(const string input){
+int SerialError::set(const string input){
 
   current = value.find(input);
 
+  return 0;
+
 }
 
-void DataBits::set(const string input){
+int DataBits::set(const string input){
 	
 	current = value.find(input);
-    if(current == value.end()){
-        SerialError error;
-        error.set("InvalidDataBits");
-        throw error;
-    }
+    if(current == value.end())return 1;
+
+    return 0;
 }
 
 void DataBits::showoptions(){
@@ -110,14 +101,12 @@ void DataBits::showoptions(){
     cout<<endl;
 }
 
-void FlowControl::set(const string input){
+int FlowControl::set(const string input){
     
     current = value.find(input);
-    if(current == value.end()){
-        SerialError error;
-        error.set("InvalidFlowControl");
-        throw error;
-    }
+    if(current == value.end())return 1;
+
+    return 0;
 }
 
 void FlowControl::showoptions(){
@@ -129,14 +118,12 @@ void FlowControl::showoptions(){
     cout<<endl;
 }
 
-void PortName::set(const string input){
+int PortName::set(const string input){
     
     current = value.find(input);
-    if(current == value.end()){
-        SerialError error;
-        error.set("InvalidPortName");
-        throw error;
-    }
+    if(current == value.end())return 1;
+
+    return 0;
 }
 
 void PortName::showoptions(){
