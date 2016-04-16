@@ -36,7 +36,7 @@ void Parity::showoptions(){
 
     for(current =value.begin(); current!=value.end(); ++current){
 
-        cout<<current->first<<": "<<current->second<<endl;
+        cout<<current->first<<endl;
     }
     cout<<endl;
 }
@@ -54,7 +54,7 @@ void BaudRate::showoptions(){
 
     for(current =value.begin(); current!=value.end(); ++current){
 
-        cout<<current->first<<": "<<current->second<<endl;
+        cout<<current->first<<endl;
     }
     cout<<endl;
 }
@@ -71,7 +71,7 @@ void StopBits::showoptions(){
 
     for(current =value.begin(); current!=value.end(); ++current){
 
-        cout<<current->first<<": "<<current->second<<endl;
+        cout<<current->first<<endl;
     }
     cout<<endl;
 }
@@ -96,7 +96,7 @@ void DataBits::showoptions(){
 
     for(current =value.begin(); current!=value.end(); ++current){
 
-        cout<<current->first<<": "<<current->second<<endl;
+        cout<<current->first<<endl;
     }
     cout<<endl;
 }
@@ -113,7 +113,7 @@ void FlowControl::showoptions(){
 
     for(current =value.begin(); current!=value.end(); ++current){
 
-        cout<<current->first<<": "<<current->second<<endl;
+        cout<<current->first<<endl;
     }
     cout<<endl;
 }
@@ -130,7 +130,7 @@ void PortName::showoptions(){
 
     for(current =value.begin(); current!=value.end(); ++current){
 
-        cout<<current->first<<": "<<current->second<<endl;
+        cout<<current->first<<endl;
     }
     cout<<endl;
 }

@@ -1,5 +1,6 @@
 #include <iostream>
 #include "include/serial.h"
+#include "include/interface.h"
 
 using namespace std;
 
@@ -9,15 +10,15 @@ int main()
 
     SerialPort connection("Baud9600", "NoParity", "OneStop", "Data8", "ttyS0", "NoFlowControl");
     Buffer buffer(1024,'\n');
-
-    cout<<"SerialReceiverConsole\n"<<endl;
-    cout<<"Chose connection parameters\n"<<endl;
+    Interface console;
 
     cout<<"Type baudrate name from list below\n"<<endl;
     connection.baudrate.showoptions();
     do{
         cin>>i;
     } while(connection.baudrate.set(i));
+
+    console.clearscreen();
 
     cout<<"Type parity type name from list below\n"<<endl;
     connection.parity.showoptions();

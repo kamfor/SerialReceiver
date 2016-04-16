@@ -5,7 +5,6 @@
 #include<unordered_map>
 #include<string>
 #include "rs232.h"
-#include "buffer.h"
 
 using namespace std;
 

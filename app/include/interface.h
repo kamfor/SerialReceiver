@@ -2,11 +2,11 @@
 #define INTERFACE_H
 
 
-class interface
+class Interface
 {
 public:
     void clearscreen();
-    interface();
+    Interface();
 };
 
 #endif // INTERFACE_H
