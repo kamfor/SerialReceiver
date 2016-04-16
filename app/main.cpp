@@ -51,7 +51,7 @@ int main()
 
 
 
-    //connection.connect();
+    connection.connect();
 
     //connection.receive(buffer.fill());
 
