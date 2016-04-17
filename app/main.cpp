@@ -42,14 +42,20 @@ int main()
 
     connection->flush();
 
-    while(1){
+    usleep(100000);
+
+    do{
 
         i = connection->receive(buffer.data);
-        if(i>0){
-            buffer.show(i);
-        }
-        usleep(10000000);
-    }
+        buffer.show(i);
+        connection->flush();
+        usleep(1000000);
+        cout<<endl;
+
+
+    }while(1);
+
+
 
     connection->disconnect();
 

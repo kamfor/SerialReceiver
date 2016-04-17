@@ -175,7 +175,7 @@ Status SerialPort::disconnect(){
 
 int SerialPort::receive(unsigned char * buffer){
 
-    int n = RS232_PollComport(portname.getint(),buffer, 4095);
+    int n = RS232_PollComport(portname.getint(),buffer, 64);
 
     return n;
 }
