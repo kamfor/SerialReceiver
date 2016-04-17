@@ -34,7 +34,7 @@ int Parity::set(const string input){
 
 void Parity::showoptions(){
 
-    for(current =value.begin(); current!=value.end(); ++current){
+    for(current=value.begin(); current!=value.end(); ++current){
 
         cout<<current->first<<endl;
     }
@@ -43,7 +43,7 @@ void Parity::showoptions(){
 
 int BaudRate::set(const string input){
 
-    current = value.find(input);
+    current=value.find(input);
     if(current == value.end())return 1;
 
     return 0;
@@ -52,7 +52,7 @@ int BaudRate::set(const string input){
 
 void BaudRate::showoptions(){
 
-    for(current =value.begin(); current!=value.end(); ++current){
+    for(current=value.begin(); current!=value.end(); ++current){
 
         cout<<current->first<<endl;
     }
@@ -61,15 +61,15 @@ void BaudRate::showoptions(){
 
 int StopBits::set(const string input){
 	
-	 current = value.find(input);
-     if(current == value.end())return 1;
+     current=value.find(input);
+     if(current==value.end())return 1;
 
      return 0;
 }
 
 void StopBits::showoptions(){
 
-    for(current =value.begin(); current!=value.end(); ++current){
+    for(current=value.begin(); current!=value.end(); ++current){
 
         cout<<current->first<<endl;
     }
@@ -86,15 +86,15 @@ int SerialError::set(const string input){
 
 int DataBits::set(const string input){
 	
-	current = value.find(input);
-    if(current == value.end())return 1;
+    current=value.find(input);
+    if(current==value.end())return 1;
 
     return 0;
 }
 
 void DataBits::showoptions(){
 
-    for(current =value.begin(); current!=value.end(); ++current){
+    for(current=value.begin(); current!=value.end(); ++current){
 
         cout<<current->first<<endl;
     }
@@ -103,15 +103,15 @@ void DataBits::showoptions(){
 
 int FlowControl::set(const string input){
     
-    current = value.find(input);
-    if(current == value.end())return 1;
+    current=value.find(input);
+    if(current==value.end())return 1;
 
     return 0;
 }
 
 void FlowControl::showoptions(){
 
-    for(current =value.begin(); current!=value.end(); ++current){
+    for(current=value.begin(); current!=value.end(); ++current){
 
         cout<<current->first<<endl;
     }
@@ -120,15 +120,15 @@ void FlowControl::showoptions(){
 
 int PortName::set(const string input){
     
-    current = value.find(input);
-    if(current == value.end())return 1;
+    current=value.find(input);
+    if(current==value.end())return 1;
 
     return 0;
 }
 
 void PortName::showoptions(){
 
-    for(current =value.begin(); current!=value.end(); ++current){
+    for(current=value.begin(); current!=value.end(); ++current){
 
         cout<<current->first<<endl;
     }
