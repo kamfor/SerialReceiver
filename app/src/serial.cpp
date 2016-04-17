@@ -155,7 +155,10 @@ Status SerialPort::connect(){ //functions from rs232.c
 
     if(RS232_OpenComport(portname.getint(), baudrate.getint(), databits.getint(), parity.getint(), stopbits.getint(), flowcontrol.getint())){
 
-        printf("Can not open comport\n");
+        cout<<"Can not open comport"<<endl;
+        cout<<portname.getint()<<endl;
+
+
 
         status.set("Error");
     }
@@ -175,5 +178,10 @@ int SerialPort::receive(unsigned char * buffer){
     int n = RS232_PollComport(portname.getint(),buffer, 4095);
 
     return n;
+}
+
+void SerialPort::flush(){
+
+    RS232_flushRX(portname.getint());
 }
 

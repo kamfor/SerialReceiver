@@ -7,9 +7,10 @@ using namespace std;
 
 int main()
 {    
-    SerialPort* connection = new SerialPort("Baud9600", "NoParity", "OneStop", "Data8", "ttyS0", "NoFlowControl");
+    SerialPort* connection = new SerialPort("Baud9600", "NoParity", "OneStop", "Data8", "ttyACM0", "NoFlowControl");
     Buffer buffer(1024,'\n');
     Interface console;
+    int i;
 
     /*console.setbaud(connection);
 
@@ -39,9 +40,16 @@ int main()
 
     connection->connect();
 
-    connection->receive(buffer.fill());
+    connection->flush();
 
-    buffer.show();
+    while(1){
+
+        i = connection->receive(buffer.data);
+        if(i>0){
+            buffer.show(i);
+        }
+        usleep(10000000);
+    }
 
     connection->disconnect();
 

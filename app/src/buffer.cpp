@@ -1,5 +1,7 @@
 #include <iostream>
-#include "./include/buffer.h"
+#include "../include/buffer.h"
+#include "../include/rs232.h"
+#include "../include/serial.h"
 
 using namespace std;
 
@@ -25,10 +27,10 @@ void Buffer::flush(){
     data[0] = 0;// to change
 }
 
-void Buffer::show(){
+void Buffer::show(int lenght){
 
-    for(unsigned int i=0; i<sizeof(data); i++){
-      cout<<data[i]<<endl; // temp vector
+    for(int i=0; i<lenght-1; i++){
+      cout<<data[i];
     }
-
+    cout<<endl;
 }

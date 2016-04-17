@@ -186,26 +186,26 @@ private:
         {"ttyS15", 15},
         {"ttyUSB0", 16},
         {"ttyUSB1", 17},
-        {"ttyUSB", 18},
-        {"ttyUSB3", 20},
-        {"ttyUSB4", 21},
-        {"ttyUSB5", 22},
-        {"ttyAMA0", 23},
-        {"ttyAMA1", 24},
-        {"ttyACM0", 25},
-        {"ttyACM1", 26},
-        {"rfcomm0", 27},
-        {"rfcomm1", 28},
-        {"ircomm0", 29},
-        {"ircomm1", 30},
-        {"cuau0", 31},
-        {"cuau1", 32},
-        {"cuau2", 33},
-        {"cuau3", 34},
-        {"cuaU0", 35},
-        {"cuaU1", 36},
-        {"cuaU2", 37},
-        {"cuaU3", 38}
+        {"ttyUSB2", 18},
+        {"ttyUSB3", 19},
+        {"ttyUSB4", 20},
+        {"ttyUSB5", 21},
+        {"ttyAMA0", 22},
+        {"ttyAMA1", 23},
+        {"ttyACM0", 24},
+        {"ttyACM1", 25},
+        {"rfcomm0", 26},
+        {"rfcomm1", 27},
+        {"ircomm0", 28},
+        {"ircomm1", 29},
+        {"cuau0", 30},
+        {"cuau1", 31},
+        {"cuau2", 32},
+        {"cuau3", 33},
+        {"cuaU0", 34},
+        {"cuaU1", 35},
+        {"cuaU2", 36},
+        {"cuaU3", 37}
     };
 
     #else
@@ -252,6 +252,7 @@ public:
     Status connect();
     Status disconnect();
     int receive(unsigned char *);
+    void flush();
 };
 
 #endif //_SERIAL_H

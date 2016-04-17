@@ -4,19 +4,16 @@
 
 class Buffer{
 
-private:
+public:
 
     unsigned char * data;
     char terminator;
     int size;
-
-public:
-
     Buffer(int, char);
     ~Buffer();
     unsigned char* fill();
     void flush();
-    void show();
+    void show(int);
 };
 
 #endif // BUFFER_H
