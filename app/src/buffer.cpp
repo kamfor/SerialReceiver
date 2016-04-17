@@ -27,5 +27,8 @@ void Buffer::flush(){
 
 void Buffer::show(){
 
-    cout<<data[0]<<endl; // temp vector
+    for(unsigned int i=0; i<sizeof(data); i++){
+      cout<<data[i]<<endl; // temp vector
+    }
+
 }

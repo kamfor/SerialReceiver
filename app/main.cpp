@@ -11,9 +11,7 @@ int main()
     Buffer buffer(1024,'\n');
     Interface console;
 
-    console.clearscreen();
-
-    console.setbaud(connection);
+    /*console.setbaud(connection);
 
     console.clearscreen();
 
@@ -35,13 +33,17 @@ int main()
 
     console.setflow(connection);
 
-    console.clearscreen();
+    console.clearscreen();*/
 
     console.showconnectionoptions(connection);
 
     connection->connect();
 
     connection->receive(buffer.fill());
+
+    buffer.show();
+
+    connection->disconnect();
 
     return 0;
 }
