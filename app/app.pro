@@ -6,10 +6,12 @@ CONFIG -= qt
 SOURCES += main.cpp \
     src/serial.cpp \
     src/rs232.c \
-    include/interface.cpp
+    src/interface.cpp \
+    src/buffer.cpp
 
 HEADERS += \
     include/serial.h \
     include/rs232.h \
     include/plot.h \
-    include/interface.h
+    include/interface.h \
+    include/buffer.h

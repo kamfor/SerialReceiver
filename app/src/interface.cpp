@@ -1,6 +1,6 @@
 #include<cstdio>
 #include<iostream>
-#include "interface.h"
+#include "../include/interface.h"
 
 using namespace std;
 

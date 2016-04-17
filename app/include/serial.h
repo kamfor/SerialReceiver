@@ -235,23 +235,6 @@ public:
     void showoptions();
 };
 
-class Buffer{
-
-private:
-
-    unsigned char * data;
-    char terminator;
-    int size;
-
-public:
-
-    Buffer(int, char);
-    ~Buffer();
-    unsigned char* fill();
-    void flush();
-    void show();
-};
-
 class SerialPort{
 
 public:

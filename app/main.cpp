@@ -1,6 +1,7 @@
 #include <iostream>
 #include "include/serial.h"
 #include "include/interface.h"
+#include "include/buffer.h"
 
 using namespace std;
 
@@ -40,7 +41,7 @@ int main()
 
     connection->connect();
 
-    //connection->receive(buffer.fill());
+    connection->receive(buffer.fill());
 
     return 0;
 }
