@@ -27,10 +27,14 @@ void Buffer::flush(){
     data[0] = 0;// to change
 }
 
-void Buffer::show(int lenght){
+string Buffer::show(int lenght){
+
+    string line;
 
     for(int i=0; i<lenght-1; i++){
-      cout<<data[i];
+      line+=data[i];
     }
-    cout<<endl;
+    line+="\n";
+
+    return line;
 }

@@ -2,7 +2,7 @@
 #include "include/serial.h"
 #include "include/interface.h"
 #include "include/buffer.h"
-
+#include "include/handlefile.h"
 using namespace std;
 
 int main()
@@ -10,7 +10,8 @@ int main()
     SerialPort* connection = new SerialPort("Baud9600", "NoParity", "OneStop", "Data8", "ttyACM0", "NoFlowControl");
     Buffer buffer(1024,'\n');
     Interface console;
-    int i;
+    HandleFile newfile("data.txt");
+    int i,j =0;
 
     /*console.setbaud(connection);
 
@@ -47,11 +48,12 @@ int main()
     do{
 
         i = connection->receive(buffer.data);
-        buffer.show(i);
+        cout<<buffer.show(i);
+        newfile.WriteToFile(buffer.show(i));
         connection->flush();
         usleep(1000000);
-        cout<<endl;
-
+        j++;
+        if(j>10) break;
 
     }while(1);
 

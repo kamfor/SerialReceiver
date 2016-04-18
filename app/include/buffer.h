@@ -1,6 +1,9 @@
 #ifndef BUFFER_H
 #define BUFFER_H
 
+#include <iostream>
+using namespace std;
+
 
 class Buffer{
 
@@ -13,7 +16,7 @@ public:
     ~Buffer();
     unsigned char* fill();
     void flush();
-    void show(int);
+    string show(int);
 };
 
 #endif // BUFFER_H
