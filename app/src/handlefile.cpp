@@ -7,6 +7,7 @@ HandleFile::HandleFile(const string patch){
 }
 
 HandleFile::~HandleFile(){
+
     file.close();
 }
 

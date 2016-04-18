@@ -175,7 +175,7 @@ http://man7.org/linux/man-pages/man3/termios.3.html
 
     new_port_settings.c_cflag = cbits | cpar | bstop | CLOCAL | CREAD;
     new_port_settings.c_iflag = ipar;
-     new_port_settings.c_oflag = 0;
+    new_port_settings.c_oflag = 0;
     new_port_settings.c_lflag = 0;
     new_port_settings.c_cc[VMIN] = 0;      /* block untill n bytes are received */
     new_port_settings.c_cc[VTIME] = 0;     /* block untill a timer expires (n * 100 mSec.) */
@@ -417,16 +417,16 @@ char comports[16][10]={"\\\\.\\COM1",  "\\\\.\\COM2",  "\\\\.\\COM3",  "\\\\.\\C
 char mode_str[128];
 
 
-int RS232_OpenComport(int comport_number, int baudrate, const char *mode)
-{
-  if((comport_number>15)||(comport_number<0))
-  {
+int RS232_OpenComport(int comport_number, int baudrate, int databits, int parity, int stopbits, int flowcontrol){
+
+  if((comport_number>15)||(comport_number<0)){
+
     printf("illegal comport number\n");
     return(1);
   }
 
-  switch(baudrate)
-  {
+  switch(baudrate){
+
     case     110 : strcpy(mode_str, "baud=110");
                    break;
     case     300 : strcpy(mode_str, "baud=300");
@@ -462,48 +462,39 @@ int RS232_OpenComport(int comport_number, int baudrate, const char *mode)
                    break;
   }
 
-  if(strlen(mode) != 3)
-  {
-    printf("invalid mode \"%s\"\n", mode);
-    return(1);
-  }
+  switch(databits){
 
-  switch(mode[0])
-  {
-    case '8': strcat(mode_str, " data=8");
+    case 8: strcat(mode_str, " data=8");
               break;
-    case '7': strcat(mode_str, " data=7");
+    case 7: strcat(mode_str, " data=7");
               break;
-    case '6': strcat(mode_str, " data=6");
+    case 6: strcat(mode_str, " data=6");
               break;
-    case '5': strcat(mode_str, " data=5");
+    case 5: strcat(mode_str, " data=5");
               break;
     default : printf("invalid number of data-bits '%c'\n", mode[0]);
               return(1);
               break;
   }
 
-  switch(mode[1])
-  {
-    case 'N':
-    case 'n': strcat(mode_str, " parity=n");
+  switch(parity){
+
+    case 0: strcat(mode_str, " parity=n");
               break;
-    case 'E':
-    case 'e': strcat(mode_str, " parity=e");
+    case 1: strcat(mode_str, " parity=e");
               break;
-    case 'O':
-    case 'o': strcat(mode_str, " parity=o");
+    case 2: strcat(mode_str, " parity=o");
               break;
     default : printf("invalid parity '%c'\n", mode[1]);
               return(1);
               break;
   }
 
-  switch(mode[2])
-  {
-    case '1': strcat(mode_str, " stop=1");
+  switch(stopbits){
+
+    case 1: strcat(mode_str, " stop=1");
               break;
-    case '2': strcat(mode_str, " stop=2");
+    case 2: strcat(mode_str, " stop=2");
               break;
     default : printf("invalid number of stop bits '%c'\n", mode[2]);
               return(1);
@@ -526,8 +517,8 @@ http://technet.microsoft.com/en-us/library/cc732236.aspx
                       0,                          /* no threads */
                       NULL);                      /* no templates */
 
-  if(Cport[comport_number]==INVALID_HANDLE_VALUE)
-  {
+  if(Cport[comport_number]==INVALID_HANDLE_VALUE){
+
     printf("unable to open comport\n");
     return(1);
   }
@@ -536,15 +527,15 @@ http://technet.microsoft.com/en-us/library/cc732236.aspx
   memset(&port_settings, 0, sizeof(port_settings));  /* clear the new struct  */
   port_settings.DCBlength = sizeof(port_settings);
 
-  if(!BuildCommDCBA(mode_str, &port_settings))
-  {
+  if(!BuildCommDCBA(mode_str, &port_settings)){
+
     printf("unable to set comport dcb settings\n");
     CloseHandle(Cport[comport_number]);
     return(1);
   }
 
-  if(!SetCommState(Cport[comport_number], &port_settings))
-  {
+  if(!SetCommState(Cport[comport_number], &port_settings)){
+
     printf("unable to set comport cfg settings\n");
     CloseHandle(Cport[comport_number]);
     return(1);
@@ -558,8 +549,8 @@ http://technet.microsoft.com/en-us/library/cc732236.aspx
   Cptimeouts.WriteTotalTimeoutMultiplier = 0;
   Cptimeouts.WriteTotalTimeoutConstant   = 0;
 
-  if(!SetCommTimeouts(Cport[comport_number], &Cptimeouts))
-  {
+  if(!SetCommTimeouts(Cport[comport_number], &Cptimeouts)){
+
     printf("unable to set comport time-out settings\n");
     CloseHandle(Cport[comport_number]);
     return(1);
@@ -569,8 +560,8 @@ http://technet.microsoft.com/en-us/library/cc732236.aspx
 }
 
 
-int RS232_PollComport(int comport_number, unsigned char *buf, int size)
-{
+int RS232_PollComport(int comport_number, unsigned char *buf, int size){
+
   int n;
 
 /* added the void pointer cast, otherwise gcc will complain about */
@@ -582,8 +573,8 @@ int RS232_PollComport(int comport_number, unsigned char *buf, int size)
 }
 
 
-int RS232_SendByte(int comport_number, unsigned char byte)
-{
+int RS232_SendByte(int comport_number, unsigned char byte){
+
   int n;
 
   WriteFile(Cport[comport_number], &byte, 1, (LPDWORD)((void *)&n), NULL);
@@ -594,12 +585,12 @@ int RS232_SendByte(int comport_number, unsigned char byte)
 }
 
 
-int RS232_SendBuf(int comport_number, unsigned char *buf, int size)
-{
+int RS232_SendBuf(int comport_number, unsigned char *buf, int size){
+
   int n;
 
-  if(WriteFile(Cport[comport_number], buf, size, (LPDWORD)((void *)&n), NULL))
-  {
+  if(WriteFile(Cport[comport_number], buf, size, (LPDWORD)((void *)&n), NULL)){
+
     return(n);
   }
 
@@ -607,8 +598,8 @@ int RS232_SendBuf(int comport_number, unsigned char *buf, int size)
 }
 
 
-void RS232_CloseComport(int comport_number)
-{
+void RS232_CloseComport(int comport_number){
+
   CloseHandle(Cport[comport_number]);
 }
 
@@ -616,8 +607,8 @@ void RS232_CloseComport(int comport_number)
 http://msdn.microsoft.com/en-us/library/windows/desktop/aa363258%28v=vs.85%29.aspx
 */
 
-int RS232_IsDCDEnabled(int comport_number)
-{
+int RS232_IsDCDEnabled(int comport_number){
+
   int status;
 
   GetCommModemStatus(Cport[comport_number], (LPDWORD)((void *)&status));
@@ -627,8 +618,8 @@ int RS232_IsDCDEnabled(int comport_number)
 }
 
 
-int RS232_IsCTSEnabled(int comport_number)
-{
+int RS232_IsCTSEnabled(int comport_number){
+
   int status;
 
   GetCommModemStatus(Cport[comport_number], (LPDWORD)((void *)&status));
@@ -638,8 +629,8 @@ int RS232_IsCTSEnabled(int comport_number)
 }
 
 
-int RS232_IsDSREnabled(int comport_number)
-{
+int RS232_IsDSREnabled(int comport_number){
+
   int status;
 
   GetCommModemStatus(Cport[comport_number], (LPDWORD)((void *)&status));
@@ -649,26 +640,26 @@ int RS232_IsDSREnabled(int comport_number)
 }
 
 
-void RS232_enableDTR(int comport_number)
-{
+void RS232_enableDTR(int comport_number){
+
   EscapeCommFunction(Cport[comport_number], SETDTR);
 }
 
 
-void RS232_disableDTR(int comport_number)
-{
+void RS232_disableDTR(int comport_number){
+
   EscapeCommFunction(Cport[comport_number], CLRDTR);
 }
 
 
-void RS232_enableRTS(int comport_number)
-{
+void RS232_enableRTS(int comport_number){
+
   EscapeCommFunction(Cport[comport_number], SETRTS);
 }
 
 
-void RS232_disableRTS(int comport_number)
-{
+void RS232_disableRTS(int comport_number){
+
   EscapeCommFunction(Cport[comport_number], CLRRTS);
 }
 
@@ -676,30 +667,28 @@ void RS232_disableRTS(int comport_number)
 https://msdn.microsoft.com/en-us/library/windows/desktop/aa363428%28v=vs.85%29.aspx
 */
 
-void RS232_flushRX(int comport_number)
-{
+void RS232_flushRX(int comport_number){
+
   PurgeComm(Cport[comport_number], PURGE_RXCLEAR | PURGE_RXABORT);
 }
 
 
-void RS232_flushTX(int comport_number)
-{
+void RS232_flushTX(int comport_number){
+
   PurgeComm(Cport[comport_number], PURGE_TXCLEAR | PURGE_TXABORT);
 }
 
 
-void RS232_flushRXTX(int comport_number)
-{
+void RS232_flushRXTX(int comport_number){
+
   PurgeComm(Cport[comport_number], PURGE_RXCLEAR | PURGE_RXABORT);
   PurgeComm(Cport[comport_number], PURGE_TXCLEAR | PURGE_TXABORT);
 }
-
 
 #endif
 
+void RS232_cputs(int comport_number, const char *text){
 
-void RS232_cputs(int comport_number, const char *text)  /* sends a string to serial port */
-{
   while(*text != 0)   RS232_SendByte(comport_number, *(text++));
 }
 

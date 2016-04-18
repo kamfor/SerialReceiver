@@ -45,7 +45,7 @@ int main()
 
     usleep(100000);
 
-    do{
+    while(1){
 
         i = connection->receive(buffer.data);
         cout<<buffer.show(i);
@@ -53,11 +53,8 @@ int main()
         connection->flush();
         usleep(1000000);
         j++;
-        if(j>10) break;
-
-    }while(1);
-
-
+        if(j>20) break;
+    }
 
     connection->disconnect();
 

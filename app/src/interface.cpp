@@ -11,6 +11,7 @@ Interface::Interface()
 }
 
 void Interface::clearscreen(){
+
     printf("\033[2J");
     printf("\033[0;0f");
 }
