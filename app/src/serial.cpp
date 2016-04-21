@@ -143,6 +143,7 @@ SerialPort::SerialPort(const string baud, const string par, const string stop, c
     databits.set(data);
     portname.set(port);
     flowcontrol.set(flow);
+    status.set("Disconnected");
 
 }
 
@@ -163,12 +164,16 @@ Status SerialPort::connect(){ //functions from rs232.c
         status.set("Error");
     }
 
+    status.set("Commected");
+
     return status;
 }
 
 Status SerialPort::disconnect(){
 
     RS232_CloseComport(portname.getint());
+
+    status.set("Disconnected");
 
     return status;
 }
