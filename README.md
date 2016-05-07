@@ -1,2 +1,2 @@
 # SerialReceiver
-lab project
+Serial data receiver with GUI and plotting. 
