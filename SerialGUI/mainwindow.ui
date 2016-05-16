@@ -23,8 +23,8 @@
    <widget class="QToolButton" name="settButton">
     <property name="geometry">
      <rect>
-      <x>1010</x>
-      <y>0</y>
+      <x>1000</x>
+      <y>10</y>
       <width>161</width>
       <height>31</height>
      </rect>
