@@ -15,6 +15,11 @@ public:
     explicit Settings(QWidget *parent = 0);
     ~Settings();
 
+private slots:
+    void on_ok_clicked();
+
+    void on_cancel_clicked();
+
 private:
     Ui::Settings *ui;
 };
