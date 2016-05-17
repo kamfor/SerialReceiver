@@ -19,7 +19,7 @@ public:
 
 class Status : public Element{
 
-private:
+public:
 
     const unordered_map<string,const int> value = {
         {"Connected", 0},
@@ -27,25 +27,19 @@ private:
         {"Error", 2}
     };
 
-public:
-
     int set(const string);
     void showoptions();
 };
 
 class Parity : public Element{
 
-private:
+public:
 
     const unordered_map<string,const int> value = {
         {"NoParity", 0},
         {"EvenParity", 1},
-        {"OddParity", 2},
-        {"UnknownParity", 3}
+        {"OddParity", 2}
     };
-
-
-public:
 
     int set(const string);
     void showoptions();
@@ -53,7 +47,7 @@ public:
 
 class BaudRate : public Element{
 
-private:
+public:
 
     const unordered_map<string,const int> value = {
         {"Baud1200", 1200},
@@ -80,23 +74,18 @@ private:
         {"Baud4000000", 4000000}
     };
 
-public:
-
     int set(const string);
     void showoptions();
 };
 
 class StopBits : public Element{
 
-private:
+public:
 
     const unordered_map<string,const int> value = {
         {"OneStop", 0},
-        {"TwoStop", 1},
-        {"UnknownStop", 2}
+        {"TwoStop", 1}
     };
-
-public:
 
     int set(const string);
     void showoptions();
@@ -104,7 +93,7 @@ public:
 
 class SerialError :public Element{
 
-private:
+public:
 
     const unordered_map<string,const int> value = {
         {"NoError", 0},
@@ -121,25 +110,20 @@ private:
         {"InvalidStatus", 11}
     };
 
-public:
-
     int set(const string);
     void showoptions();
 };
 
 class DataBits : public Element{
 
-private:
+public:
 
    const unordered_map<string,const int> value = {
         {"Data5", 5},
         {"Data6", 6},
         {"Data7", 7},
-        {"Data8", 8},
-        {"UnknownDataBits", 0}
+        {"Data8", 8}
     };
-
-public:
 
     int set(const string);
     void showoptions();
@@ -147,16 +131,13 @@ public:
 
 class FlowControl : public Element{
 
-private:
+public:
 
     const unordered_map<string,const int> value = {
         {"NoFlowControl", 0},
         {"HardwareControl", 1},
-        {"SoftwareControl", 2},
-        {"UnknownFlowControl", 3}
+        {"SoftwareControl", 2}
     };
-
-public:
 
     int set(const string);
     void showoptions();
@@ -164,7 +145,7 @@ public:
 
 class PortName : public Element{
 
-private:
+public:
 
     #if defined(__linux__) || defined(__FreeBSD__)
     const unordered_map<string,const int> value= {
@@ -228,8 +209,6 @@ private:
     };
 
     #endif
-
-public:
 
     int set(const string);
     void showoptions();

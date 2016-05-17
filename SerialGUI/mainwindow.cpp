@@ -7,6 +7,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    con = new SerialPort("Baud9600", "NoParity", "OneStop", "Data8", "ttyACM0", "NoFlowControl");
 }
 
 MainWindow::~MainWindow()
@@ -16,7 +17,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_settButton_clicked()
 {
-    Settings settings;
+    Settings settings(con);
     settings.setModal(true);
     settings.exec();
 }

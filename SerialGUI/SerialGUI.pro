@@ -14,10 +14,21 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    settings.cpp
+    settings.cpp \
+    ../app/src/buffer.cpp \
+    ../app/src/handlefile.cpp \
+    ../app/src/interface.cpp \
+    ../app/src/serial.cpp \
+    ../app/src/rs232.c
 
 HEADERS  += mainwindow.h \
-    settings.h
+    settings.h \
+    ../app/include/buffer.h \
+    ../app/include/handlefile.h \
+    ../app/include/interface.h \
+    ../app/include/plot.h \
+    ../app/include/rs232.h \
+    ../app/include/serial.h
 
 FORMS    += mainwindow.ui \
     settings.ui
