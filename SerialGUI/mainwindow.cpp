@@ -1,6 +1,5 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include "settings.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -8,6 +7,7 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     con = new SerialPort("Baud9600", "NoParity", "OneStop", "Data8", "ttyACM0", "NoFlowControl");
+    ui->statusBar->showMessage("Disconnected");
 }
 
 MainWindow::~MainWindow()
@@ -17,7 +17,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_settButton_clicked()
 {
-    Settings settings(con);
-    settings.setModal(true);
-    settings.exec();
+    this->settings = new Settings(con,this);
+    settings->setModal(true);
+    settings->show();
 }

@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include "../app/include/serial.h"
+#include "settings.h"
 
 namespace Ui {
 class MainWindow;
@@ -16,6 +17,7 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
     SerialPort* con;
+    Settings* settings;
 
 private slots:
 

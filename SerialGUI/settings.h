@@ -17,9 +17,10 @@ public:
     ~Settings();
     SerialPort* con;
 
-private slots:
-    void on_ok_clicked();
 
+private slots:
+
+    void on_ok_clicked();
     void on_cancel_clicked();
 
 private:
