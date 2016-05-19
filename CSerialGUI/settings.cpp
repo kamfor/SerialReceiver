@@ -1,7 +1,6 @@
 #include "settings.h"
 #include "ui_settings.h"
-#include "QString"
-#include <QMessageBox>
+
 
 Settings::Settings(SerialPort *connection, QWidget *parent) :
     QDialog(parent),

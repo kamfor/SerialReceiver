@@ -3,6 +3,8 @@
 
 #include <QDialog>
 #include "../app/include/serial.h"
+#include <QMessageBox>
+#include <QString>
 
 namespace Ui {
 class Settings;
