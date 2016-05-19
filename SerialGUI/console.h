@@ -15,14 +15,9 @@ public:
 
     void putData(const QByteArray &data);
 
-    void setLocalEchoEnabled(bool set);
-
 protected:
     virtual void keyPressEvent(QKeyEvent *e);
     virtual void mousePressEvent(QMouseEvent *e);
-
-private:
-    bool localEchoEnabled;
 
 };
 

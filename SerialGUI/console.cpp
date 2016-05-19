@@ -3,8 +3,7 @@
 #include <QtCore/QDebug>
 
 Console::Console(QWidget *parent)
-    : QPlainTextEdit(parent)
-    , localEchoEnabled(false){
+    : QPlainTextEdit(parent){
 
     document()->setMaximumBlockCount(100);
     QPalette p = palette();
@@ -22,11 +21,6 @@ void Console::putData(const QByteArray &data){
     bar->setValue(bar->maximum());
 }
 
-void Console::setLocalEchoEnabled(bool set){
-
-    localEchoEnabled = set;
-}
-
 void Console::keyPressEvent(QKeyEvent *e){
 
     switch (e->key()) {
@@ -37,14 +31,13 @@ void Console::keyPressEvent(QKeyEvent *e){
     case Qt::Key_Down:
         break;
     default:
-        if (localEchoEnabled)
-            QPlainTextEdit::keyPressEvent(e);
         emit getData(e->text().toLocal8Bit());
     }
 }
 
 void Console::mousePressEvent(QMouseEvent *e){
 
+    Q_UNUSED(e)
     setFocus();
 }
 
