@@ -47,27 +47,28 @@
 //! [0]
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
-    ui(new Ui::MainWindow)
-{
+    ui(new Ui::MainWindow){
+
     ui->setupUi(this);
     console = new Console;
     console->setEnabled(false);
-    //setCentralWidget(console);
-//! [1]
+
     serial = new QSerialPort(this);
     settings = new SettingsDialog;
 
-    ui->actionConnect->setEnabled(true);
-    ui->actionDisconnect->setEnabled(false);
-    ui->actionQuit->setEnabled(true);
-    ui->actionConfigure->setEnabled(true);
+    //ui->actionConnect->setEnabled(true);
+    //ui->actionDisconnect->setEnabled(false);
+    //ui->actionQuit->setEnabled(true);
+    //ui->actionConfigure->setEnabled(true);
+
+
 
     status = new QLabel;
     ui->statusBar->addWidget(status);
 
-
-    initActionsConnections();
     createButtonBox();
+    initActionsConnections();
+
 
     QVBoxLayout *mainLayout = new QVBoxLayout;
     mainLayout->addWidget(console);
@@ -88,15 +89,12 @@ MainWindow::MainWindow(QWidget *parent) :
 
 }
 
-MainWindow::~MainWindow()
-{
+MainWindow::~MainWindow(){
     delete settings;
     delete ui;
 }
 
-//! [4]
-void MainWindow::openSerialPort()
-{
+void MainWindow::openSerialPort(){
     SettingsDialog::Settings p = settings->settings();
     serial->setPortName(p.name);
     serial->setBaudRate(p.baudRate);
@@ -119,11 +117,8 @@ void MainWindow::openSerialPort()
         showStatusMessage(tr("Open error"));
     }
 }
-//! [4]
 
-//! [5]
-void MainWindow::closeSerialPort()
-{
+void MainWindow::closeSerialPort(){
     if (serial->isOpen())
         serial->close();
     console->setEnabled(false);
@@ -132,72 +127,75 @@ void MainWindow::closeSerialPort()
     ui->actionConfigure->setEnabled(true);
     showStatusMessage(tr("Disconnected"));
 }
-//! [5]
 
-void MainWindow::about()
-{
-    QMessageBox::about(this, tr("About Simple Terminal"),
-                       tr("The <b>Simple Terminal</b> example demonstrates how to "
-                          "use the Qt Serial Port module in modern GUI applications "
-                          "using Qt, with a menu bar, toolbars, and a status bar."));
+void MainWindow::about(){
+
+    QMessageBox::about(this, tr("O programie"),
+                       tr("Serial Receiver to prosty program bazujązy na bibliotece Qt"
+                          "umożliwia odbieranie i analize dancych z portu szeregowego"));
+}
+
+void MainWindow::openSettings(){
+
+    settings->show();
+}
+
+void MainWindow::clearConsole(){
+
+    console->clear();
 }
 
 //! [6]
-void MainWindow::writeData(const QByteArray &data)
-{
+void MainWindow::writeData(const QByteArray &data){
+
     serial->write(data);
 }
-//! [6]
 
-//! [7]
-void MainWindow::readData()
-{
+void MainWindow::readData(){
+
     QByteArray data = serial->readAll();
     console->putData(data);
 }
-//! [7]
 
-//! [8]
-void MainWindow::handleError(QSerialPort::SerialPortError error)
-{
+void MainWindow::handleError(QSerialPort::SerialPortError error){
+
     if (error == QSerialPort::ResourceError) {
         QMessageBox::critical(this, tr("Critical Error"), serial->errorString());
         closeSerialPort();
     }
 }
-//! [8]
 
-void MainWindow::initActionsConnections()
-{
-    connect(ui->actionConnect, &QAction::triggered, this, &MainWindow::openSerialPort);
-    connect(ui->actionDisconnect, &QAction::triggered, this, &MainWindow::closeSerialPort);
+void MainWindow::initActionsConnections(){
+
+    connect(buttons[0], SIGNAL (released()), this, SLOT (openSettings()));
+    connect(buttons[1], SIGNAL (released()), this, SLOT (openSerialPort()));
+    connect(buttons[2], SIGNAL (released()), this, SLOT (closeSerialPort()));
+    connect(buttons[3], SIGNAL (released()), this, SLOT (clearConsole()));
+    connect(buttons[4], SIGNAL (released()), this, SLOT (about()));
     connect(ui->actionQuit, &QAction::triggered, this, &MainWindow::close);
-    connect(ui->actionConfigure, &QAction::triggered, settings, &MainWindow::show);
-    connect(ui->actionClear, &QAction::triggered, console, &Console::clear);
     connect(ui->actionAbout, &QAction::triggered, this, &MainWindow::about);
-    connect(ui->actionAboutQt, &QAction::triggered, qApp, &QApplication::aboutQt);
 }
 
-void MainWindow::showStatusMessage(const QString &message)
-{
+void MainWindow::showStatusMessage(const QString &message){
+
     status->setText(message);
 }
 
-void MainWindow::createButtonBox()
-{
+void MainWindow::createButtonBox(){
+
     buttonBox = new QGroupBox(tr("Menu"));
     QHBoxLayout *layout = new QHBoxLayout;
 
 
-    buttons[0] = new QPushButton(tr("Settings"));
+    buttons[0] = new QPushButton("Settings",this);
     layout->addWidget(buttons[0]);
-    buttons[1] = new QPushButton(tr("Connect"));
+    buttons[1] = new QPushButton("Connect",this);
     layout->addWidget(buttons[1]);
-    buttons[2] = new QPushButton(tr("Disconnect"));
+    buttons[2] = new QPushButton("Disconnect",this);
     layout->addWidget(buttons[2]);
-    buttons[3] = new QPushButton(tr("Clear"));
+    buttons[3] = new QPushButton("Clear",this);
     layout->addWidget(buttons[3]);
-    buttons[4] = new QPushButton(tr("Plot"));
+    buttons[4] = new QPushButton("Plot",this);
     layout->addWidget(buttons[4]);
 
     buttonBox->setLayout(layout);
