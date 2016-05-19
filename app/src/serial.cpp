@@ -76,14 +76,6 @@ void StopBits::showoptions(){
     cout<<endl;
 }
 
-int SerialError::set(const string input){
-
-  current = value.find(input);
-
-  return 0;
-
-}
-
 int DataBits::set(const string input){
 	
     current=value.find(input);
@@ -156,15 +148,11 @@ Status SerialPort::connect(){ //functions from rs232.c
 
     if(RS232_OpenComport(portname.getint(), baudrate.getint(), databits.getint(), parity.getint(), stopbits.getint(), flowcontrol.getint())){
 
-        cout<<"Can not open comport"<<endl;
-        cout<<portname.getint()<<endl;
-
-
-
         status.set("Error");
     }
-
-    status.set("Commected");
+    else{
+        status.set("Commected");
+    }
 
     return status;
 }

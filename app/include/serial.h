@@ -2,7 +2,7 @@
 #define _SERIAL_H
 
 #include<iostream>
-#include<unordered_map>
+#include<map>
 #include<string>
 #include "rs232.h"
 
@@ -12,7 +12,7 @@ class Element{
 
 public:
 
-    unordered_map<string, const int>::const_iterator current;
+    map<string, const int>::const_iterator current;
     const string getstring();
     int getint();
 };
@@ -21,10 +21,21 @@ class Status : public Element{
 
 public:
 
-    const unordered_map<string,const int> value = {
+    const map<string,const int> value = {
         {"Connected", 0},
         {"Disconnected" , 1},
-        {"Error", 2}
+        {"Error", 2},
+        {"DeviceNotFound", 3},
+        {"PermissionError", 4},
+        {"OpenError", 5},
+        {"IllegalPortNumber", 6},
+        {"InvalidBaudrate", 7},
+        {"InvalidMode", 8},
+        {"InvalidDataBits", 9},
+        {"InvalidParity", 10},
+        {"InvalidStopBits", 11},
+        {"UnableToGetPortStatus", 12},
+        {"InvalidStatus", 13}
     };
 
     int set(const string);
@@ -35,7 +46,7 @@ class Parity : public Element{
 
 public:
 
-    const unordered_map<string,const int> value = {
+    const map<string,const int> value = {
         {"NoParity", 0},
         {"EvenParity", 1},
         {"OddParity", 2}
@@ -49,7 +60,7 @@ class BaudRate : public Element{
 
 public:
 
-    const unordered_map<string,const int> value = {
+    const map<string,const int> value = {
         {"Baud1200", 1200},
         {"Baud1800", 1800},
         {"Baud2400", 2400},
@@ -82,32 +93,9 @@ class StopBits : public Element{
 
 public:
 
-    const unordered_map<string,const int> value = {
+    const map<string,const int> value = {
         {"OneStop", 0},
         {"TwoStop", 1}
-    };
-
-    int set(const string);
-    void showoptions();
-};
-
-class SerialError :public Element{
-
-public:
-
-    const unordered_map<string,const int> value = {
-        {"NoError", 0},
-        {"DeviceNotFound", 1},
-        {"PermissionError", 2},
-        {"OpenError", 3},
-        {"IllegalPortNumber", 4},
-        {"InvalidBaudrate", 5},
-        {"InvalidMode", 6},
-        {"InvalidDataBits", 7},
-        {"InvalidParity", 8},
-        {"InvalidStopBits", 9},
-        {"UnableToGetPortStatus", 10},
-        {"InvalidStatus", 11}
     };
 
     int set(const string);
@@ -118,7 +106,7 @@ class DataBits : public Element{
 
 public:
 
-   const unordered_map<string,const int> value = {
+   const map<string,const int> value = {
         {"Data5", 5},
         {"Data6", 6},
         {"Data7", 7},
@@ -133,7 +121,7 @@ class FlowControl : public Element{
 
 public:
 
-    const unordered_map<string,const int> value = {
+    const map<string,const int> value = {
         {"NoFlowControl", 0},
         {"HardwareControl", 1},
         {"SoftwareControl", 2}
@@ -148,7 +136,7 @@ class PortName : public Element{
 public:
 
     #if defined(__linux__) || defined(__FreeBSD__)
-    const unordered_map<string,const int> value= {
+    const map<string,const int> value= {
         {"ttyS0", 0},
         {"ttyS1", 1},
         {"ttyS2", 2},
@@ -191,7 +179,7 @@ public:
 
     #else
 
-    const unordered_map<string,const int> value= {,
+    const map<string,const int> value= {,
         {"COM1", 39},
         {"COM2", 40},
         {"COM3", 41},

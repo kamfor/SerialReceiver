@@ -23,6 +23,8 @@ private slots:
 
     void on_settButton_clicked();
 
+    void on_ConButton_clicked();
+
 private:
     Ui::MainWindow *ui;
 };

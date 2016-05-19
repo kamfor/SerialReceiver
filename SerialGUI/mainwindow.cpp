@@ -21,3 +21,15 @@ void MainWindow::on_settButton_clicked()
     settings->setModal(true);
     settings->show();
 }
+
+void MainWindow::on_ConButton_clicked()
+{
+    this->con->connect();
+    if(con->status.getint()){
+        ui->statusBar->showMessage("Disconnected");
+    }
+    else{
+        ui->statusBar->showMessage("Connected");
+    }
+
+}

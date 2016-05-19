@@ -46,7 +46,17 @@ void Settings::on_ok_clicked()
     QString temp;
     temp = ui->portcombo->currentText();
     con->portname.set(temp.toStdString());
-    QMessageBox::information(this,QString::fromStdString(con->portname.getstring()),tr("ok"));
+    temp = ui->baudcombo->currentText();
+    con->baudrate.set(temp.toStdString());
+    temp = ui->datacombo->currentText();
+    con->databits.set(temp.toStdString());
+    temp = ui->stopcombo->currentText();
+    con->stopbits.set(temp.toStdString());
+    temp = ui->paritycombo->currentText();
+    con->parity.set(temp.toStdString());
+    temp = ui->flowcombo->currentText();
+    con->flowcontrol.set(temp.toStdString());
+    QMessageBox::information(this,QString::fromStdString(con->baudrate.getstring()),tr("ok"));
     this->hide();
 }
 
