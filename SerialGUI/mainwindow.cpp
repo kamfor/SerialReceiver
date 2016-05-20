@@ -21,18 +21,16 @@ MainWindow::MainWindow(QWidget *parent) :
     serial = new QSerialPort(this);
     settings = new SettingsDialog;
 
-    //ui->actionConnect->setEnabled(true);
-    //ui->actionDisconnect->setEnabled(false);
-    //ui->actionQuit->setEnabled(true);
-    //ui->actionConfigure->setEnabled(true);
-
-
 
     status = new QLabel;
     ui->statusBar->addWidget(status);
 
     createButtonBox();
     initActionsConnections();
+
+    buttons[0]->setEnabled(true);
+    buttons[1]->setEnabled(true);
+    buttons[2]->setEnabled(true);
 
 
     QVBoxLayout *mainLayout = new QVBoxLayout;
@@ -43,8 +41,6 @@ MainWindow::MainWindow(QWidget *parent) :
     mainWidget->setLayout(mainLayout);
     setCentralWidget(mainWidget);
     setWindowTitle(tr("SerialReceiver"));
-
-
 
 
     connect(serial, static_cast<void (QSerialPort::*)(QSerialPort::SerialPortError)>(&QSerialPort::error),
@@ -69,9 +65,9 @@ void MainWindow::openSerialPort(){
     serial->setFlowControl(p.flowControl);
     if (serial->open(QIODevice::ReadWrite)) {
         console->setEnabled(true);
-        //ui->actionConnect->setEnabled(false);
-        //ui->actionDisconnect->setEnabled(true);
-        //ui->actionConfigure->setEnabled(false);
+        buttons[0]->setEnabled(false);
+        buttons[1]->setEnabled(false);
+        buttons[2]->setEnabled(true);
         showStatusMessage(tr("Connected to %1 : %2, %3, %4, %5, %6")
                           .arg(p.name).arg(p.stringBaudRate).arg(p.stringDataBits)
                           .arg(p.stringParity).arg(p.stringStopBits).arg(p.stringFlowControl));
@@ -86,9 +82,9 @@ void MainWindow::closeSerialPort(){
     if (serial->isOpen())
         serial->close();
     console->setEnabled(false);
-    //ui->actionConnect->setEnabled(true);
-    //ui->actionDisconnect->setEnabled(false);
-    //ui->actionConfigure->setEnabled(true);
+    buttons[0]->setEnabled(true);
+    buttons[1]->setEnabled(true);
+    buttons[2]->setEnabled(false);
     showStatusMessage(tr("Disconnected"));
 }
 
