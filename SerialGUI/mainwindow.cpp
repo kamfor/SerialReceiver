@@ -132,8 +132,8 @@ void MainWindow::initActionsConnections(){
     connect(buttons[2], SIGNAL (released()), this, SLOT (closeSerialPort()));
     connect(buttons[3], SIGNAL (released()), this, SLOT (clearConsole()));
     connect(buttons[4], SIGNAL (released()), this, SLOT (about()));
-    //connect(ui->actionQuit, &QAction::triggered, this, &MainWindow::close);
-    //connect(ui->actionAbout, &QAction::triggered, this, &MainWindow::about);
+    connect(ui->actionExit, &QAction::triggered, this, &MainWindow::close);
+    connect(ui->actionAbout, &QAction::triggered, this, &MainWindow::about);
 }
 
 void MainWindow::showStatusMessage(const QString &message){

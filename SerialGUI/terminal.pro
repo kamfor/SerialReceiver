@@ -18,5 +18,4 @@ FORMS += \
     mainwindow.ui \
     settingsdialog.ui
 
-RESOURCES += \
-    terminal.qrc
+RESOURCES +=
