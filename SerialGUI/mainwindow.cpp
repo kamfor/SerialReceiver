@@ -8,7 +8,9 @@
 #include <QGroupBox>
 #include <QPushButton>
 #include <QDialogButtonBox>
-#include <QtSerialPort/QSerialPort>
+#include <QTextStream>
+#include <QFileDialog>
+#include <QFile>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -20,6 +22,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
     serial = new QSerialPort(this);
     settings = new SettingsDialog;
+    filedata = new QVector<QByteArray>;
 
 
     status = new QLabel;
@@ -86,6 +89,7 @@ void MainWindow::closeSerialPort(){
     buttons[1]->setEnabled(true);
     buttons[2]->setEnabled(false);
     showStatusMessage(tr("Disconnected"));
+    filedata->clear();
 }
 
 void MainWindow::about(){
@@ -103,6 +107,7 @@ void MainWindow::openSettings(){
 void MainWindow::clearConsole(){
 
     console->clear();
+    filedata->clear();
 }
 
 //! [6]
@@ -115,6 +120,7 @@ void MainWindow::readData(){
 
     QByteArray data = serial->readAll();
     console->putData(data);
+    filedata->push_back(data);
 }
 
 void MainWindow::handleError(QSerialPort::SerialPortError error){
@@ -134,6 +140,7 @@ void MainWindow::initActionsConnections(){
     connect(buttons[4], SIGNAL (released()), this, SLOT (about()));
     connect(ui->actionExit, &QAction::triggered, this, &MainWindow::close);
     connect(ui->actionAbout, &QAction::triggered, this, &MainWindow::about);
+    connect(ui->actionSave, &QAction::triggered, this, &MainWindow::saveFile);
 }
 
 void MainWindow::showStatusMessage(const QString &message){
@@ -159,4 +166,17 @@ void MainWindow::createButtonBox(){
     layout->addWidget(buttons[4]);
 
     buttonBox->setLayout(layout);
+}
+
+void MainWindow::saveFile(){ //take care about it
+
+    QString filename = QFileDialog::getSaveFileName(this,tr("Save File"),tr(""),tr("Text Files(*.txt"));
+    QFile file(filename);
+    file.open(QIODevice::WriteOnly|QIODevice::Text);
+    QTextStream out(&file);
+    for(int i=0; i<filedata->size();i++){
+            out<<&filedata->at(i)<<endl;
+    }
+    file.close();
+
 }

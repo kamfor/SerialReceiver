@@ -38,6 +38,7 @@
 #include <QtCore/QtGlobal>
 #include <QMainWindow>
 #include <QtSerialPort/QSerialPort>
+#include <QVector>
 
 
 QT_BEGIN_NAMESPACE
@@ -72,8 +73,8 @@ private slots:
     void about();
     void writeData(const QByteArray &data);
     void readData();
-
     void handleError(QSerialPort::SerialPortError error);
+    void saveFile();
 
 private:
     void initActionsConnections();
@@ -89,6 +90,8 @@ private:
     QSerialPort *serial;
     QPushButton *buttons[5];
     QGroupBox *buttonBox;
+    QVector<QByteArray> *filedata;
+
 };
 
 #endif // MAINWINDOW_H
