@@ -1,21 +1,27 @@
 QT += widgets serialport
+QT += widgets printsupport
 
 TARGET = terminal
 TEMPLATE = app
 
 SOURCES += \
     main.cpp \
-    mainwindow.cpp \
-    settingsdialog.cpp \
-    console.cpp
+    src/mainwindow.cpp \
+    src/settingsdialog.cpp \
+    src/console.cpp \
+    plots/qcustomplot.cpp \
+    src/plot.cpp
 
 HEADERS += \
-    mainwindow.h \
-    settingsdialog.h \
-    console.h
+    include/mainwindow.h \
+    include/settingsdialog.h \
+    include/console.h \
+    plots/qcustomplot.h \
+    include/plot.h
 
 FORMS += \
-    mainwindow.ui \
-    settingsdialog.ui
+    forms/mainwindow.ui \
+    forms/settingsdialog.ui \
+    forms/plot.ui
 
 RESOURCES +=
