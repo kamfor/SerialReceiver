@@ -8,7 +8,6 @@
 #include <QGroupBox>
 #include <QPushButton>
 #include <QDialogButtonBox>
-#include <QTextStream>
 #include <QFileDialog>
 #include <QFile>
 
@@ -89,13 +88,12 @@ void MainWindow::closeSerialPort(){
     buttons[1]->setEnabled(true);
     buttons[2]->setEnabled(false);
     showStatusMessage(tr("Disconnected"));
-    filedata->clear();
 }
 
 void MainWindow::about(){
 
     QMessageBox::about(this, tr("O programie"),
-                       tr("Serial Receiver to prosty program bazujązy na bibliotece Qt"
+                       tr("Serial Receiver to prosty program bazujązy na bibliotece Qt \n"
                           "umożliwia odbieranie i analize dancych z portu szeregowego"));
 }
 
@@ -170,12 +168,11 @@ void MainWindow::createButtonBox(){
 
 void MainWindow::saveFile(){ //take care about it
 
-    QString filename = QFileDialog::getSaveFileName(this,tr("Save File"),tr(""),tr("Text Files(*.txt"));
+    QString filename = QFileDialog::getSaveFileName(this,tr("Save File"),tr(""),tr("Text Files(*.txt)"));
     QFile file(filename);
     file.open(QIODevice::WriteOnly|QIODevice::Text);
-    QTextStream out(&file);
     for(int i=0; i<filedata->size();i++){
-            out<<&filedata->at(i)<<endl;
+            file.write(filedata->at(i));
     }
     file.close();
 
