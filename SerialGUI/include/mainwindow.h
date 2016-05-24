@@ -39,6 +39,7 @@
 #include <QMainWindow>
 #include <QtSerialPort/QSerialPort>
 #include <QVector>
+#include "../plots/qcustomplot.h"
 
 
 QT_BEGIN_NAMESPACE
@@ -94,6 +95,7 @@ private:
     QPushButton *buttons[5];
     QGroupBox *buttonBox;
     QVector<QByteArray> *filedata;
+    QCustomPlot *customPlot;
 
 signals:
     void sendToPlot(double,double);

@@ -23,7 +23,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
     serial = new QSerialPort(this);
     settings = new SettingsDialog;
-    plot = new Plot(this);
+    //plot = new Plot(this);
     filedata = new QVector<QByteArray>;
 
 
@@ -53,7 +53,7 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(serial, &QSerialPort::readyRead, this, &MainWindow::readData);
     connect(console, &Console::getData, this, &MainWindow::writeData);
 
-    connect(this, SIGNAL(sendToPlot(double,double)), plot, SLOT(realtimeDataSlot(double,double)));
+    //connect(this, SIGNAL(sendToPlot(double,double)), plot, SLOT(realtimeDataSlot(double,double))); make it in one window
 
 }
 
