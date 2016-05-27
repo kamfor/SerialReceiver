@@ -19,7 +19,6 @@ HEADERS += \
 
 FORMS += \
     forms/mainwindow.ui \
-    forms/settingsdialog.ui \
-    forms/plot.ui
+    forms/settingsdialog.ui
 
 RESOURCES +=

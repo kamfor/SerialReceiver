@@ -45,8 +45,7 @@ MainWindow::MainWindow(QWidget *parent) :
             this, &MainWindow::handleError);
     connect(serial, &QSerialPort::readyRead, this, &MainWindow::readData);
     connect(console, &Console::getData, this, &MainWindow::writeData);
-
-    connect(this, SIGNAL(sendToPlot(double,double)), this, SLOT(realtimeDataSlot(double,double)));
+    connect(this, SIGNAL(sendToPlot(double)), this, SLOT(realtimeDataSlot(double)));
 
 }
 
@@ -125,7 +124,7 @@ void MainWindow::readData(){
 
     qDebug() <<data.toDouble();
 
-    emit sendToPlot(data.toDouble(),0);
+    emit sendToPlot(data.toDouble());
 }
 
 
@@ -243,7 +242,7 @@ void MainWindow::generatePlot(){
   customPlot->replot();
 }
 
-void MainWindow::realtimeDataSlot(double value0, double value1){
+void MainWindow::realtimeDataSlot(double value0){
 
     double key = QDateTime::currentDateTime().toMSecsSinceEpoch()/1000.0;
 

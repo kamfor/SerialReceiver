@@ -77,7 +77,7 @@ private slots:
     void readData();
     void handleError(QSerialPort::SerialPortError error);
     void saveFile();
-    void realtimeDataSlot(double,double);
+    void realtimeDataSlot(double);
 
 private:
     void generatePlot();
@@ -91,7 +91,6 @@ private:
     QLabel *status;
     Console *console;
     SettingsDialog *settings;
-    Plot *plot;
     QSerialPort *serial;
     QPushButton *buttons[4];
     QGroupBox *buttonBox;
@@ -99,7 +98,7 @@ private:
     QCustomPlot *customPlot;
 
 signals:
-    void sendToPlot(double,double);
+    void sendToPlot(double);
 };
 
 #endif // MAINWINDOW_H
