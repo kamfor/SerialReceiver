@@ -22,15 +22,14 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow){
 
     ui->setupUi(this);
-    console = new Console;
-    console->setEnabled(false);
 
+    console = new Console;
     serial = new QSerialPort(this);
     settings = new SettingsDialog;
     filedata = new QVector<QByteArray>;
     customPlot = new QCustomPlot(this);
-
     status = new QLabel;
+
     ui->statusBar->addWidget(status);
 
     createLayouts();
@@ -40,6 +39,8 @@ MainWindow::MainWindow(QWidget *parent) :
     buttons[0]->setEnabled(true);
     buttons[1]->setEnabled(true);
     buttons[2]->setEnabled(true);
+    console->setEnabled(false);
+    autoscale = true;
 
     connect(serial, static_cast<void (QSerialPort::*)(QSerialPort::SerialPortError)>(&QSerialPort::error),
             this, &MainWindow::handleError);
@@ -145,6 +146,7 @@ void MainWindow::initActionsConnections(){
     connect(ui->actionExit, &QAction::triggered, this, &MainWindow::close);
     connect(ui->actionAbout, &QAction::triggered, this, &MainWindow::about);
     connect(ui->actionSave, &QAction::triggered, this, &MainWindow::saveFile);
+    connect(ui->actionAuto_scale_on, &QAction::triggered, this, &MainWindow::changePlotCaption);
 }
 
 void MainWindow::showStatusMessage(const QString &message){
@@ -156,7 +158,6 @@ void MainWindow::createLayouts(){
 
     buttonBox = new QGroupBox(tr("Menu"));
     QHBoxLayout *layout = new QHBoxLayout;
-
 
     buttons[0] = new QPushButton("Settings",this);
     layout->addWidget(buttons[0]);
@@ -207,7 +208,6 @@ void MainWindow::saveFile(){
             file.write(filedata->at(i));
     }
     file.close();
-
 }
 
 void MainWindow::generatePlot(){
@@ -261,11 +261,35 @@ void MainWindow::realtimeDataSlot(double value0){
       customPlot->graph(0)->removeDataBefore(key-8);
       //customPlot->graph(1)->removeDataBefore(key-8);
       // rescale value (vertical) axis to fit the current data:
-      customPlot->graph(0)->rescaleValueAxis();
+      if (autoscale){
+          customPlot->graph(0)->rescaleValueAxis();
+      }
       //customPlot->graph(1)->rescaleValueAxis(true);
       lastPointKey = key;
     }
     // make key axis range scroll with the data (at a constant range size of 8):
     customPlot->xAxis->setRange(key+0.25, 8, Qt::AlignRight);
     customPlot->replot();
+}
+
+void MainWindow::changePlotCaption(){
+
+    if(autoscale){
+        autoscale = false;
+        ui->actionAuto_scale_on->setText("Auto scale off");
+    }
+    else{
+        autoscale = true;
+        ui->actionAuto_scale_on->setText("Auto scale on");
+    }
+}
+
+void MainWindow::changePlotScale(int scale){
+    if(scale>0){
+
+    }
+}
+
+void MainWindow::savePlot(){
+
 }

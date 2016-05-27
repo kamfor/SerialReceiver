@@ -78,6 +78,9 @@ private slots:
     void handleError(QSerialPort::SerialPortError error);
     void saveFile();
     void realtimeDataSlot(double);
+    void changePlotCaption();
+    void savePlot();
+    void changePlotScale(int);
 
 private:
     void generatePlot();
@@ -96,6 +99,7 @@ private:
     QGroupBox *buttonBox;
     QVector<QByteArray> *filedata;
     QCustomPlot *customPlot;
+    bool autoscale;
 
 signals:
     void sendToPlot(double);
