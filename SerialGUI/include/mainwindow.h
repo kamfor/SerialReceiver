@@ -80,7 +80,7 @@ private slots:
     void realtimeDataSlot(double);
     void changePlotCaption();
     void savePlot();
-    void changePlotScale(int);
+    void changePlotScale();
 
 private:
     void generatePlot();

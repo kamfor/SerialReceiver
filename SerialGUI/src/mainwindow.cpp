@@ -41,6 +41,7 @@ MainWindow::MainWindow(QWidget *parent) :
     buttons[2]->setEnabled(true);
     console->setEnabled(false);
     autoscale = true;
+    changePlotCaption();
 
     connect(serial, static_cast<void (QSerialPort::*)(QSerialPort::SerialPortError)>(&QSerialPort::error),
             this, &MainWindow::handleError);
@@ -147,6 +148,7 @@ void MainWindow::initActionsConnections(){
     connect(ui->actionAbout, &QAction::triggered, this, &MainWindow::about);
     connect(ui->actionSave, &QAction::triggered, this, &MainWindow::saveFile);
     connect(ui->actionAuto_scale_on, &QAction::triggered, this, &MainWindow::changePlotCaption);
+    connect(ui->actionZoom, &QAction::triggered, this, &MainWindow::changePlotScale);
 }
 
 void MainWindow::showStatusMessage(const QString &message){
@@ -276,18 +278,17 @@ void MainWindow::changePlotCaption(){
 
     if(autoscale){
         autoscale = false;
-        ui->actionAuto_scale_on->setText("Auto scale off");
+        ui->actionAuto_scale_on->setText("Auto scale on");
     }
     else{
         autoscale = true;
-        ui->actionAuto_scale_on->setText("Auto scale on");
+        ui->actionAuto_scale_on->setText("Auto scale off");
     }
 }
 
-void MainWindow::changePlotScale(int scale){
-    if(scale>0){
+void MainWindow::changePlotScale(){
+        customPlot->yAxis->setRangeUpper(1.0);
 
-    }
 }
 
 void MainWindow::savePlot(){
