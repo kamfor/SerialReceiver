@@ -12,6 +12,7 @@
 #include <QFileDialog>
 #include <QDataStream>
 #include <QFile>
+#include <QSpacerItem>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -25,7 +26,7 @@ MainWindow::MainWindow(QWidget *parent) :
     settings = new SettingsDialog;
     //plot = new Plot(this);
     filedata = new QVector<QByteArray>;
-
+    customPlot = new QCustomPlot(this);
 
     status = new QLabel;
     ui->statusBar->addWidget(status);
@@ -37,10 +38,30 @@ MainWindow::MainWindow(QWidget *parent) :
     buttons[1]->setEnabled(true);
     buttons[2]->setEnabled(true);
 
+    QGroupBox *left = new QGroupBox;
+    QSizePolicy spLeft(QSizePolicy::Minimum, QSizePolicy::Minimum);
+    spLeft.setVerticalStretch(2);
+    left->setSizePolicy(spLeft);
+    QVBoxLayout *leftlayout = new QVBoxLayout;
+    leftlayout->addWidget(console);
+    leftlayout->addWidget(buttonBox);
+    left->setLayout(leftlayout);
 
-    QVBoxLayout *mainLayout = new QVBoxLayout;
-    mainLayout->addWidget(console);
-    mainLayout->addWidget(buttonBox);
+    QGroupBox *right = new QGroupBox;
+    QSizePolicy spRight(QSizePolicy::Expanding, QSizePolicy::Expanding);
+    spRight.setVerticalStretch(2);
+    right->setSizePolicy(spRight);
+    QVBoxLayout *rightlayout = new QVBoxLayout;
+    rightlayout->addSpacerItem(new QSpacerItem(600,1));
+    rightlayout->addWidget(customPlot,1000);
+    right->setLayout(rightlayout);
+
+
+    QHBoxLayout *mainLayout = new QHBoxLayout;
+    //mainLayout->addWidget(console);
+    //mainLayout->addWidget(buttonBox);
+    mainLayout->addWidget(left);
+    mainLayout->addWidget(right);
     QWidget *mainWidget = new QWidget;
 
     mainWidget->setLayout(mainLayout);
