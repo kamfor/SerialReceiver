@@ -2,7 +2,6 @@
 #include "ui_mainwindow.h"
 #include "../include/console.h"
 #include "../include/settingsdialog.h"
-#include "../include/plot.h"
 
 #include <QMessageBox>
 #include <QLabel>
@@ -13,6 +12,10 @@
 #include <QDataStream>
 #include <QFile>
 #include <QSpacerItem>
+#include <QVector>
+#include <QDebug>
+#include <QScreen>
+#include <QMetaEnum>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -24,57 +27,26 @@ MainWindow::MainWindow(QWidget *parent) :
 
     serial = new QSerialPort(this);
     settings = new SettingsDialog;
-    //plot = new Plot(this);
     filedata = new QVector<QByteArray>;
     customPlot = new QCustomPlot(this);
 
     status = new QLabel;
     ui->statusBar->addWidget(status);
 
-    createButtonBox();
+    createLayouts();
     initActionsConnections();
+    generatePlot();
 
     buttons[0]->setEnabled(true);
     buttons[1]->setEnabled(true);
     buttons[2]->setEnabled(true);
-
-    QGroupBox *left = new QGroupBox;
-    QSizePolicy spLeft(QSizePolicy::Minimum, QSizePolicy::Minimum);
-    spLeft.setVerticalStretch(2);
-    left->setSizePolicy(spLeft);
-    QVBoxLayout *leftlayout = new QVBoxLayout;
-    leftlayout->addWidget(console);
-    leftlayout->addWidget(buttonBox);
-    left->setLayout(leftlayout);
-
-    QGroupBox *right = new QGroupBox;
-    QSizePolicy spRight(QSizePolicy::Expanding, QSizePolicy::Expanding);
-    spRight.setVerticalStretch(2);
-    right->setSizePolicy(spRight);
-    QVBoxLayout *rightlayout = new QVBoxLayout;
-    rightlayout->addSpacerItem(new QSpacerItem(600,1));
-    rightlayout->addWidget(customPlot,1000);
-    right->setLayout(rightlayout);
-
-
-    QHBoxLayout *mainLayout = new QHBoxLayout;
-    //mainLayout->addWidget(console);
-    //mainLayout->addWidget(buttonBox);
-    mainLayout->addWidget(left);
-    mainLayout->addWidget(right);
-    QWidget *mainWidget = new QWidget;
-
-    mainWidget->setLayout(mainLayout);
-    setCentralWidget(mainWidget);
-    setWindowTitle(tr("SerialReceiver"));
-
 
     connect(serial, static_cast<void (QSerialPort::*)(QSerialPort::SerialPortError)>(&QSerialPort::error),
             this, &MainWindow::handleError);
     connect(serial, &QSerialPort::readyRead, this, &MainWindow::readData);
     connect(console, &Console::getData, this, &MainWindow::writeData);
 
-    //connect(this, SIGNAL(sendToPlot(double,double)), plot, SLOT(realtimeDataSlot(double,double))); make it in one window
+    connect(this, SIGNAL(sendToPlot(double,double)), this, SLOT(realtimeDataSlot(double,double)));
 
 }
 
@@ -84,7 +56,7 @@ MainWindow::~MainWindow(){
     delete filedata;
     delete console;
     delete ui;
-    delete plot;
+    delete customPlot;
 }
 
 void MainWindow::openSerialPort(){
@@ -132,11 +104,6 @@ void MainWindow::openSettings(){
     settings->show();
 }
 
-void MainWindow::openPlot(){
-
-    plot->show();
-    plot->generatePlot();
-}
 
 void MainWindow::clearConsole(){
 
@@ -176,7 +143,6 @@ void MainWindow::initActionsConnections(){
     connect(buttons[1], SIGNAL (released()), this, SLOT (openSerialPort()));
     connect(buttons[2], SIGNAL (released()), this, SLOT (closeSerialPort()));
     connect(buttons[3], SIGNAL (released()), this, SLOT (clearConsole()));
-    connect(buttons[4], SIGNAL (released()), this, SLOT (openPlot()));
     connect(ui->actionExit, &QAction::triggered, this, &MainWindow::close);
     connect(ui->actionAbout, &QAction::triggered, this, &MainWindow::about);
     connect(ui->actionSave, &QAction::triggered, this, &MainWindow::saveFile);
@@ -187,7 +153,7 @@ void MainWindow::showStatusMessage(const QString &message){
     status->setText(message);
 }
 
-void MainWindow::createButtonBox(){
+void MainWindow::createLayouts(){
 
     buttonBox = new QGroupBox(tr("Menu"));
     QHBoxLayout *layout = new QHBoxLayout;
@@ -201,10 +167,36 @@ void MainWindow::createButtonBox(){
     layout->addWidget(buttons[2]);
     buttons[3] = new QPushButton("Clear",this);
     layout->addWidget(buttons[3]);
-    buttons[4] = new QPushButton("Plot",this);
-    layout->addWidget(buttons[4]);
 
     buttonBox->setLayout(layout);
+
+    QGroupBox *left = new QGroupBox;
+    QSizePolicy spLeft(QSizePolicy::Maximum, QSizePolicy::Minimum);
+    spLeft.setVerticalStretch(2);
+    left->setSizePolicy(spLeft);
+    QVBoxLayout *leftlayout = new QVBoxLayout;
+    leftlayout->addWidget(console);
+    leftlayout->addWidget(buttonBox);
+    left->setLayout(leftlayout);
+
+    QGroupBox *right = new QGroupBox;
+    QSizePolicy spRight(QSizePolicy::Expanding, QSizePolicy::Expanding);
+    spRight.setVerticalStretch(2);
+    right->setSizePolicy(spRight);
+    QVBoxLayout *rightlayout = new QVBoxLayout;
+    rightlayout->addSpacerItem(new QSpacerItem(600,1));
+    rightlayout->addWidget(customPlot,1000);
+    right->setLayout(rightlayout);
+
+
+    QHBoxLayout *mainLayout = new QHBoxLayout;
+    mainLayout->addWidget(left);
+    mainLayout->addWidget(right);
+    QWidget *mainWidget = new QWidget;
+
+    mainWidget->setLayout(mainLayout);
+    setCentralWidget(mainWidget);
+    setWindowTitle(tr("SerialReceiver"));
 }
 
 void MainWindow::saveFile(){
@@ -217,4 +209,64 @@ void MainWindow::saveFile(){
     }
     file.close();
 
+}
+
+void MainWindow::generatePlot(){
+
+  customPlot->addGraph(); // blue line
+  customPlot->graph(0)->setPen(QPen(Qt::blue));
+  customPlot->graph(0)->setBrush(QBrush(QColor(240, 255, 200)));
+  customPlot->graph(0)->setAntialiasedFill(false);
+  //customPlot->addGraph(); // red line
+  //customPlot->graph(1)->setPen(QPen(Qt::red));
+  //customPlot->graph(0)->setChannelFillGraph(customPlot->graph(1));
+
+  customPlot->addGraph(); // blue dot
+  customPlot->graph(1)->setPen(QPen(Qt::blue));
+  customPlot->graph(1)->setLineStyle(QCPGraph::lsNone);
+  customPlot->graph(1)->setScatterStyle(QCPScatterStyle::ssDisc);
+  //customPlot->addGraph(); // red dot
+  //customPlot->graph(3)->setPen(QPen(Qt::red));
+  //customPlot->graph(3)->setLineStyle(QCPGraph::lsNone);
+  //customPlot->graph(3)->setScatterStyle(QCPScatterStyle::ssDisc);
+
+  customPlot->xAxis->setTickLabelType(QCPAxis::ltDateTime);
+  customPlot->xAxis->setDateTimeFormat("hh:mm:ss");
+  customPlot->xAxis->setAutoTickStep(false);
+  customPlot->xAxis->setTickStep(2);
+  customPlot->axisRect()->setupFullAxesBox();
+
+  // make left and bottom axes transfer their ranges to right and top axes:
+  connect(customPlot->xAxis, SIGNAL(rangeChanged(QCPRange)), customPlot->xAxis2, SLOT(setRange(QCPRange)));
+  connect(customPlot->yAxis, SIGNAL(rangeChanged(QCPRange)), customPlot->yAxis2, SLOT(setRange(QCPRange)));
+
+  customPlot->replot();
+}
+
+void MainWindow::realtimeDataSlot(double value0, double value1){
+
+    double key = QDateTime::currentDateTime().toMSecsSinceEpoch()/1000.0;
+
+    static double lastPointKey = 0;
+    if (key-lastPointKey > 0.01) // at most add point every 10 ms
+    {
+      // add data to lines:
+      customPlot->graph(0)->addData(key, value0);
+      //customPlot->graph(1)->addData(key, value1);
+      // set data of dots:
+      customPlot->graph(1)->clearData();
+      customPlot->graph(1)->addData(key, value0);
+      //customPlot->graph(3)->clearData();
+      //customPlot->graph(3)->addData(key, value1);
+      // remove data of lines that's outside visible range:
+      customPlot->graph(0)->removeDataBefore(key-8);
+      //customPlot->graph(1)->removeDataBefore(key-8);
+      // rescale value (vertical) axis to fit the current data:
+      customPlot->graph(0)->rescaleValueAxis();
+      //customPlot->graph(1)->rescaleValueAxis(true);
+      lastPointKey = key;
+    }
+    // make key axis range scroll with the data (at a constant range size of 8):
+    customPlot->xAxis->setRange(key+0.25, 8, Qt::AlignRight);
+    customPlot->replot();
 }

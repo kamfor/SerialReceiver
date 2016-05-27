@@ -71,17 +71,18 @@ private slots:
     void openSerialPort();
     void closeSerialPort();
     void openSettings();
-    void openPlot();
     void clearConsole();
     void about();
     void writeData(const QByteArray &data);
     void readData();
     void handleError(QSerialPort::SerialPortError error);
     void saveFile();
+    void realtimeDataSlot(double,double);
 
 private:
+    void generatePlot();
     void initActionsConnections();
-    void createButtonBox();
+    void createLayouts();
 
 private:
     void showStatusMessage(const QString &message);
@@ -92,7 +93,7 @@ private:
     SettingsDialog *settings;
     Plot *plot;
     QSerialPort *serial;
-    QPushButton *buttons[5];
+    QPushButton *buttons[4];
     QGroupBox *buttonBox;
     QVector<QByteArray> *filedata;
     QCustomPlot *customPlot;
