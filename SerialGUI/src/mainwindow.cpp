@@ -148,7 +148,8 @@ void MainWindow::initActionsConnections(){
     connect(ui->actionAbout, &QAction::triggered, this, &MainWindow::about);
     connect(ui->actionSave, &QAction::triggered, this, &MainWindow::saveFile);
     connect(ui->actionAuto_scale_on, &QAction::triggered, this, &MainWindow::changePlotCaption);
-    connect(ui->actionZoom, &QAction::triggered, this, &MainWindow::changePlotScale);
+    connect(ui->actionZoom, &QAction::triggered, this, &MainWindow::extendPlotScale);
+    connect(ui->actionZoom_2, &QAction::triggered, this, &MainWindow::dropPlotScale);
 }
 
 void MainWindow::showStatusMessage(const QString &message){
@@ -286,9 +287,16 @@ void MainWindow::changePlotCaption(){
     }
 }
 
-void MainWindow::changePlotScale(){
-        customPlot->yAxis->setRangeUpper(1.0);
+void MainWindow::extendPlotScale(){
 
+        customPlot->yAxis->setRange(0, 5);
+        customPlot->replot();
+}
+
+void MainWindow::dropPlotScale(){
+
+        customPlot->yAxis->setRange(0, 1);
+        customPlot->replot();
 }
 
 void MainWindow::savePlot(){
