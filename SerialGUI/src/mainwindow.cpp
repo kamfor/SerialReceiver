@@ -35,6 +35,7 @@ MainWindow::MainWindow(QWidget *parent) :
     createLayouts();
     initActionsConnections();
     generatePlot();
+    connectActions();
 
     buttons[0]->setEnabled(true);
     buttons[1]->setEnabled(true);
@@ -289,16 +290,42 @@ void MainWindow::changePlotCaption(){
 
 void MainWindow::extendPlotScale(){
 
-        customPlot->yAxis->setRange(0, 5);
+    if(autoscale == false){
+        customPlot->yAxis->setRange(customPlot->yAxis->range()*2);
         customPlot->replot();
+    }
 }
 
 void MainWindow::dropPlotScale(){
 
-        customPlot->yAxis->setRange(0, 1);
+    if(autoscale == false){
+        customPlot->yAxis->setRange(customPlot->yAxis->range()/2);
         customPlot->replot();
+    }
 }
 
 void MainWindow::savePlot(){
 
+}
+
+void MainWindow::connectActions(){
+    ctrlplus = new QAction(this);
+    ctrlminus = new QAction(this);
+    ctrls = new QAction(this);
+    ctrlp = new QAction(this);
+
+    ctrlplus->setShortcut(QKeySequence::ZoomIn);
+    ctrlminus->setShortcut(QKeySequence::ZoomOut);
+    ctrls->setShortcut(QKeySequence::Save);
+    ctrlp->setShortcut(QKeySequence::Print);
+
+    connect(ctrlplus, SIGNAL(triggered()), this, SLOT(extendPlotScale()));
+    connect(ctrlminus, SIGNAL(triggered()), this, SLOT(dropPlotScale()));
+    connect(ctrls, SIGNAL(triggered()), this, SLOT(saveFile()));
+    connect(ctrlp, SIGNAL(triggered()), this, SLOT(savePlot()));
+
+    this->addAction(ctrlplus);
+    this->addAction(ctrlminus);
+    this->addAction(ctrls);
+    this->addAction(ctrlp);
 }

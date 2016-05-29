@@ -39,6 +39,7 @@
 #include <QMainWindow>
 #include <QtSerialPort/QSerialPort>
 #include <QVector>
+#include <QAction>
 #include "../plots/qcustomplot.h"
 
 
@@ -87,6 +88,7 @@ private:
     void generatePlot();
     void initActionsConnections();
     void createLayouts();
+    void connectActions();
 
 private:
     void showStatusMessage(const QString &message);
@@ -100,6 +102,10 @@ private:
     QGroupBox *buttonBox;
     QVector<QByteArray> *filedata;
     QCustomPlot *customPlot;
+    QAction *ctrlplus;
+    QAction *ctrlminus;
+    QAction *ctrls;
+    QAction *ctrlp;
     bool autoscale;
 
 signals:
