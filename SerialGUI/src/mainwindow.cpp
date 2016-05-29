@@ -121,13 +121,15 @@ void MainWindow::writeData(const QByteArray &data){
 void MainWindow::readData(){
 
     QByteArray data = serial->readAll();
-    console->putData(data);
-    filedata->push_back(data);
-    data = data.simplified();
-
-    qDebug() <<data.toDouble();
-
-    emit sendToPlot(data.toDouble());
+    //data = data.simplified();
+    console->putData(data.toHex());
+    filedata->push_back(data.toHex()+"\n");
+    double result=0;
+    for(int i = 0; i<data.size(); i++){
+        result+= (double)((uchar)data.at(i)*qPow(256,data.size()-i-1));
+        qDebug() <<(uchar)data.at(i);
+    }
+    emit sendToPlot(result);
 }
 
 
@@ -151,6 +153,7 @@ void MainWindow::initActionsConnections(){
     connect(ui->actionAuto_scale_on, &QAction::triggered, this, &MainWindow::changePlotCaption);
     connect(ui->actionZoom, &QAction::triggered, this, &MainWindow::extendPlotScale);
     connect(ui->actionZoom_2, &QAction::triggered, this, &MainWindow::dropPlotScale);
+    connect(ui->actionSave_Polt, &QAction::triggered, this, &MainWindow::savePlot);
 }
 
 void MainWindow::showStatusMessage(const QString &message){
@@ -207,7 +210,11 @@ void MainWindow::saveFile(){
 
     QString filename = QFileDialog::getSaveFileName(this,tr("Save File"),tr(""),tr("Text Files(*.txt)"));
     QFile file(filename);
-    file.open(QIODevice::WriteOnly|QIODevice::Text);
+    if (!file.open(QIODevice::WriteOnly|QIODevice::Text)){
+
+        QMessageBox::warning(0,"Could not create File",
+        QObject::tr( "\n Could not create File on disk"));
+    }
     for(int i=0; i<filedata->size();i++){
             file.write(filedata->at(i));
     }
@@ -291,6 +298,7 @@ void MainWindow::changePlotCaption(){
 void MainWindow::extendPlotScale(){
 
     if(autoscale == false){
+        customPlot->yAxis->setRange(0,customPlot->yAxis->range().upper);
         customPlot->yAxis->setRange(customPlot->yAxis->range()*2);
         customPlot->replot();
     }
@@ -299,6 +307,7 @@ void MainWindow::extendPlotScale(){
 void MainWindow::dropPlotScale(){
 
     if(autoscale == false){
+        customPlot->yAxis->setRange(0,customPlot->yAxis->range().upper);
         customPlot->yAxis->setRange(customPlot->yAxis->range()/2);
         customPlot->replot();
     }
@@ -306,6 +315,13 @@ void MainWindow::dropPlotScale(){
 
 void MainWindow::savePlot(){
 
+    QString filename = QFileDialog::getSaveFileName(this,tr("Save Plot"),tr(""),tr("(*.png)"));
+    QFile file(filename);
+    if (!file.open(QIODevice::WriteOnly|QFile::WriteOnly)){
+        QMessageBox::warning(0,"Could not create File",
+        QObject::tr( "\n Could not create File on disk"));
+    }
+    customPlot->savePng(filename,  0, 0, 1.0, -1  );
 }
 
 void MainWindow::connectActions(){
