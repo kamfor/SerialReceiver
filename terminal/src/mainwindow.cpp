@@ -124,18 +124,8 @@ void MainWindow::readData(){
     data = data.simplified();
     console->putData(data);
     filedata->push_back(data+"\n");
-    //double result=0;
-    /*for(int i = 0; i<data.size(); i++){
-        result+= (double)((uchar)data.at(i)*qPow(256,data.size()-i-1));
-        qDebug() <<(uchar)data.at(i);
-    }*/
-
-    QString value(data.data());
-    value = value.toInt();
-    qDebug() <<value;
-
-
-    emit sendToPlot(data.toDouble());
+    bool bStatus = false;
+    emit sendToPlot(data.toInt(&bStatus,16));
 }
 
 
