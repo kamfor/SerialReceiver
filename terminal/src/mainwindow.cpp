@@ -121,15 +121,21 @@ void MainWindow::writeData(const QByteArray &data){
 void MainWindow::readData(){
 
     QByteArray data = serial->readAll();
-    //data = data.simplified();
-    console->putData(data.toHex());
-    filedata->push_back(data.toHex()+"\n");
-    double result=0;
-    for(int i = 0; i<data.size(); i++){
+    data = data.simplified();
+    console->putData(data);
+    filedata->push_back(data+"\n");
+    //double result=0;
+    /*for(int i = 0; i<data.size(); i++){
         result+= (double)((uchar)data.at(i)*qPow(256,data.size()-i-1));
         qDebug() <<(uchar)data.at(i);
-    }
-    emit sendToPlot(result);
+    }*/
+
+    QString value(data.data());
+    value = value.toInt();
+    qDebug() <<value;
+
+
+    emit sendToPlot(data.toDouble());
 }
 
 
