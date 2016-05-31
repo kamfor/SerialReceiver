@@ -45,6 +45,7 @@
     <addaction name="actionZoom"/>
     <addaction name="actionZoom_2"/>
     <addaction name="actionSave_Polt"/>
+    <addaction name="actionSet_Color"/>
    </widget>
    <addaction name="menuFile"/>
    <addaction name="menuPlot"/>
@@ -91,6 +92,11 @@
   <action name="actionSave_Polt">
    <property name="text">
     <string>Save plot</string>
+   </property>
+  </action>
+  <action name="actionSet_Color">
+   <property name="text">
+    <string>Set Color</string>
    </property>
   </action>
  </widget>

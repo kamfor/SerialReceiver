@@ -83,6 +83,7 @@ private slots:
     void savePlot();
     void extendPlotScale();
     void dropPlotScale();
+    void setPlotColor();
 
 private:
     void generatePlot();

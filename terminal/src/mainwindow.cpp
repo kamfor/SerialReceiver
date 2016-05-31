@@ -16,6 +16,7 @@
 #include <QDebug>
 #include <QScreen>
 #include <QMetaEnum>
+#include <QColorDialog>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -150,6 +151,7 @@ void MainWindow::initActionsConnections(){
     connect(ui->actionZoom, &QAction::triggered, this, &MainWindow::extendPlotScale);
     connect(ui->actionZoom_2, &QAction::triggered, this, &MainWindow::dropPlotScale);
     connect(ui->actionSave_Polt, &QAction::triggered, this, &MainWindow::savePlot);
+    connect(ui->actionSet_Color, &QAction::triggered, this, &MainWindow::setPlotColor);
 }
 
 void MainWindow::showStatusMessage(const QString &message){
@@ -221,8 +223,8 @@ void MainWindow::generatePlot(){
 
   customPlot->addGraph(); // blue line
   customPlot->graph(0)->setPen(QPen(Qt::blue));
-  customPlot->graph(0)->setBrush(QBrush(QColor(240, 255, 200)));
-  customPlot->graph(0)->setAntialiasedFill(false);
+  //customPlot->graph(0)->setBrush(QBrush(QColor(240, 255, 200)));
+  //customPlot->graph(0)->setAntialiasedFill(false);
   //customPlot->addGraph(); // red line
   //customPlot->graph(1)->setPen(QPen(Qt::red));
   //customPlot->graph(0)->setChannelFillGraph(customPlot->graph(1));
@@ -340,4 +342,12 @@ void MainWindow::connectActions(){
     this->addAction(ctrlminus);
     this->addAction(ctrls);
     this->addAction(ctrlp);
+}
+
+void MainWindow::setPlotColor(){
+
+    QColor plotColor;
+    plotColor = QColorDialog::getColor(Qt::red, this);
+    customPlot->graph(0)->setPen(QPen(plotColor));
+    customPlot->graph(1)->setPen(QPen(plotColor));
 }
