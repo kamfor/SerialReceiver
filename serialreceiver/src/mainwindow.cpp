@@ -48,7 +48,6 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(serial, static_cast<void (QSerialPort::*)(QSerialPort::SerialPortError)>(&QSerialPort::error),this, &MainWindow::handleError);
     connect(serial, &QSerialPort::readyRead, this, &MainWindow::readData);
     connect(console, &Console::getData, this, &MainWindow::writeData);
-    connect(this, SIGNAL(sendToPlot(int)), this, SLOT(realtimeDataSlot(int)));
 }
 
 MainWindow::~MainWindow(){
