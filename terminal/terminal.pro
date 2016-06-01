@@ -1,5 +1,6 @@
 QT += widgets serialport
 QT += widgets printsupport
+QT += serialport
 
 TARGET = terminal
 TEMPLATE = app
