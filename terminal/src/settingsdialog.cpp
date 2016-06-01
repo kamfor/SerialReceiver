@@ -1,6 +1,5 @@
 #include "../include/settingsdialog.h"
 #include "ui_settingsdialog.h"
-
 #include <QtSerialPort/QSerialPortInfo>
 #include <QIntValidator>
 #include <QLineEdit>
@@ -14,9 +13,7 @@ SettingsDialog::SettingsDialog(QWidget *parent) :
     ui(new Ui::SettingsDialog){
 
     ui->setupUi(this);
-
     intValidator = new QIntValidator(0, 4000000, this);
-
     ui->baudRateBox->setInsertPolicy(QComboBox::NoInsert);
 
     connect(ui->applyButton, &QPushButton::clicked,
@@ -30,7 +27,6 @@ SettingsDialog::SettingsDialog(QWidget *parent) :
 
     fillPortsParameters();
     fillPortsInfo();
-
     updateSettings();
 }
 
@@ -68,7 +64,7 @@ void SettingsDialog::checkCustomBaudRatePolicy(int idx){
 
     bool isCustomBaudRate = !ui->baudRateBox->itemData(idx).isValid();
     ui->baudRateBox->setEditable(isCustomBaudRate);
-    if (isCustomBaudRate) {
+    if (isCustomBaudRate){
         ui->baudRateBox->clearEditText();
         QLineEdit *edit = ui->baudRateBox->lineEdit();
         edit->setValidator(intValidator);

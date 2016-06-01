@@ -45,12 +45,10 @@ MainWindow::MainWindow(QWidget *parent) :
     autoscale = true;
     changePlotCaption();
 
-    connect(serial, static_cast<void (QSerialPort::*)(QSerialPort::SerialPortError)>(&QSerialPort::error),
-            this, &MainWindow::handleError);
+    connect(serial, static_cast<void (QSerialPort::*)(QSerialPort::SerialPortError)>(&QSerialPort::error),this, &MainWindow::handleError);
     connect(serial, &QSerialPort::readyRead, this, &MainWindow::readData);
     connect(console, &Console::getData, this, &MainWindow::writeData);
     connect(this, SIGNAL(sendToPlot(int)), this, SLOT(realtimeDataSlot(int)));
-
 }
 
 MainWindow::~MainWindow(){
@@ -99,7 +97,12 @@ void MainWindow::about(){
 
     QMessageBox::about(this, tr("O programie"),
                        tr("Serial Receiver to prosty program bazujązy na bibliotece Qt \n"
-                          "umożliwia odbieranie i analize dancych z portu szeregowego"));
+                          "umożliwia odbieranie i analize dancych z portu szeregowego \n"
+                          "Skróty klawiaturowe : \n"
+                          "ctrl + - zwiększenie skali wykresu, \n"
+                          "ctrl - - zmniejszenie skali wykresu, \n"
+                          "ctrl p - zapis wykresu do pliku, \n"
+                          "ctrl s - zapis danych z konsoli do pliku"));
 }
 
 void MainWindow::openSettings(){
@@ -128,13 +131,12 @@ void MainWindow::readData(){
     QList<QByteArray> list = data.split(';');
     for(int i=0;i<list.count(); i++){
         if(list.at(i).size()>1){
-            qDebug() <<list.at(i);
-            //console->putData(list.at(i));
+            //qDebug() <<list.at(i);
+            console->putData(list.at(i));
             realtimeDataSlot(list.at(i).toInt(&bStatus,16));
         }
     }
 }
-
 
 void MainWindow::handleError(QSerialPort::SerialPortError error){
 

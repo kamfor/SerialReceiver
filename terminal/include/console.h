@@ -35,7 +35,7 @@ public:
     void putData(const QByteArray &data);
 
 protected:
-	//! Wirtualne funkcie obecnie nieużywane
+	//! Wirtualne funkcje obecnie nieużywane
     virtual void keyPressEvent(QKeyEvent *e);
     virtual void mousePressEvent(QMouseEvent *e);
 
