@@ -122,11 +122,27 @@ void MainWindow::writeData(const QByteArray &data){
 void MainWindow::readData(){
 
     QByteArray data = serial->readAll();
+    serial->flush();
+
     data = data.simplified();
-    console->putData(data);
-    filedata->push_back(data+"\n");
+
+    //qDebug() <<data;
+    //console->putData(data);
+    QList<QByteArray> list;
     bool bStatus = false;
-    emit sendToPlot(data.toInt(&bStatus,16));
+
+    list = data.split(';');
+    for(int i=0;i<list.count(); i++){
+
+        //console->putData(list.at(i));
+        emit sendToPlot(list.at(i).toInt(&bStatus,16));
+        //qDebug() <<list.at(i);
+        //filedata->push_back(data+"\n");
+
+    }
+    //filedata->push_back(data+"\n");
+    //bool bStatus = false;
+    //emit sendToPlt(data.toInt(&bStatus,16));
 }
 
 
