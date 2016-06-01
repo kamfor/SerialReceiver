@@ -49,7 +49,7 @@ MainWindow::MainWindow(QWidget *parent) :
             this, &MainWindow::handleError);
     connect(serial, &QSerialPort::readyRead, this, &MainWindow::readData);
     connect(console, &Console::getData, this, &MainWindow::writeData);
-    connect(this, SIGNAL(sendToPlot(double)), this, SLOT(realtimeDataSlot(double)));
+    connect(this, SIGNAL(sendToPlot(int)), this, SLOT(realtimeDataSlot(int)));
 
 }
 
@@ -123,26 +123,16 @@ void MainWindow::readData(){
 
     QByteArray data = serial->readAll();
     serial->flush();
-
     data = data.simplified();
-
-    //qDebug() <<data;
-    //console->putData(data);
-    QList<QByteArray> list;
     bool bStatus = false;
-
-    list = data.split(';');
+    QList<QByteArray> list = data.split(';');
     for(int i=0;i<list.count(); i++){
-
-        //console->putData(list.at(i));
-        emit sendToPlot(list.at(i).toInt(&bStatus,16));
-        //qDebug() <<list.at(i);
-        //filedata->push_back(data+"\n");
-
+        if(list.at(i).size()>1){
+            qDebug() <<list.at(i);
+            //console->putData(list.at(i));
+            realtimeDataSlot(list.at(i).toInt(&bStatus,16));
+        }
     }
-    //filedata->push_back(data+"\n");
-    //bool bStatus = false;
-    //emit sendToPlt(data.toInt(&bStatus,16));
 }
 
 
@@ -267,19 +257,19 @@ void MainWindow::generatePlot(){
   customPlot->replot();
 }
 
-void MainWindow::realtimeDataSlot(double value0){
+void MainWindow::realtimeDataSlot(int value0){
 
     double key = QDateTime::currentDateTime().toMSecsSinceEpoch()/1000.0;
 
     static double lastPointKey = 0;
-    if (key-lastPointKey > 0.01) // at most add point every 10 ms
+    if (key-lastPointKey > 0.02) // at most add point every 10 ms
     {
       // add data to lines:
-      customPlot->graph(0)->addData(key, value0);
+      customPlot->graph(0)->addData(key, (double)value0);
       //customPlot->graph(1)->addData(key, value1);
       // set data of dots:
       customPlot->graph(1)->clearData();
-      customPlot->graph(1)->addData(key, value0);
+      customPlot->graph(1)->addData(key, (double)value0);
       //customPlot->graph(3)->clearData();
       //customPlot->graph(3)->addData(key, value1);
       // remove data of lines that's outside visible range:

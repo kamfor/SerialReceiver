@@ -78,7 +78,7 @@ private slots:
     void readData();
     void handleError(QSerialPort::SerialPortError error);
     void saveFile();
-    void realtimeDataSlot(double);
+    void realtimeDataSlot(int);
     void changePlotCaption();
     void savePlot();
     void extendPlotScale();
@@ -110,7 +110,7 @@ private:
     bool autoscale;
 
 signals:
-    void sendToPlot(double);
+    void sendToPlot(int);
 };
 
 #endif // MAINWINDOW_H
