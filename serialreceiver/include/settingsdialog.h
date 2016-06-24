@@ -40,6 +40,7 @@ public:
         QString stringStopBits; /*!< Nazwa bitów stopu */ 
         QSerialPort::FlowControl flowControl; /*!< Obiekt kontroli przepływu */ 
         QString stringFlowControl; /*!< Nazwa kontroli przepływu */ 
+        QString stringSpacer; /*!< Znak rozdzielajacy ramki */
     };
 //! Konstruktor klasy
 /*!
@@ -83,6 +84,12 @@ private slots:
     \param idx - wartość do sprawdzenia 
 */
     void checkCustomDevicePathPolicy(int idx);
+
+//! CustomSpacerPolicy
+/*!
+    konfiguruje pole do wpisania nietypowego znamku rozdzielajacego
+*/
+    void CustomSpacerPolicy();
 
 private:
 

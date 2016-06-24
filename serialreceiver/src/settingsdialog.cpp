@@ -24,6 +24,8 @@ SettingsDialog::SettingsDialog(QWidget *parent) :
             this, &SettingsDialog::checkCustomBaudRatePolicy);
     connect(ui->serialPortInfoListBox,  static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged),
             this, &SettingsDialog::checkCustomDevicePathPolicy);
+    connect(ui->spacerBox,  static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged),
+            this, &SettingsDialog::CustomSpacerPolicy);
 
     fillPortsParameters();
     fillPortsInfo();
@@ -79,6 +81,11 @@ void SettingsDialog::checkCustomDevicePathPolicy(int idx){
         ui->serialPortInfoListBox->clearEditText();
 }
 
+void SettingsDialog::CustomSpacerPolicy(){
+
+    ui->spacerBox->setEditable(true);
+}
+
 void SettingsDialog::fillPortsParameters(){
 
     ui->baudRateBox->addItem(QStringLiteral("9600"), QSerialPort::Baud9600);
@@ -109,6 +116,10 @@ void SettingsDialog::fillPortsParameters(){
     ui->flowControlBox->addItem(tr("None"), QSerialPort::NoFlowControl);
     ui->flowControlBox->addItem(tr("RTS/CTS"), QSerialPort::HardwareControl);
     ui->flowControlBox->addItem(tr("XON/XOFF"), QSerialPort::SoftwareControl);
+
+    ui->spacerBox->addItem(tr(";"));
+    ui->spacerBox->addItem(tr(","));
+    ui->spacerBox->addItem(tr("\n"));
 }
 
 void SettingsDialog::fillPortsInfo(){
@@ -163,5 +174,7 @@ void SettingsDialog::updateSettings(){
     currentSettings.flowControl = static_cast<QSerialPort::FlowControl>(
                 ui->flowControlBox->itemData(ui->flowControlBox->currentIndex()).toInt());
     currentSettings.stringFlowControl = ui->flowControlBox->currentText();
+
+    currentSettings.stringSpacer = ui->spacerBox->currentText();
 
 }
