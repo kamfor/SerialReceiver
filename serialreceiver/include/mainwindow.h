@@ -8,7 +8,6 @@
 #include <QAction>
 #include "../plots/qcustomplot.h"
 
-
 QT_BEGIN_NAMESPACE
 
 class QLabel;

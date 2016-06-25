@@ -10,13 +10,15 @@ SOURCES += \
     src/mainwindow.cpp \
     src/settingsdialog.cpp \
     src/console.cpp \
-    plots/qcustomplot.cpp
+    plots/qcustomplot.cpp \
+    src/readthread.cpp
 
 HEADERS += \
     include/mainwindow.h \
     include/settingsdialog.h \
     include/console.h \
-    plots/qcustomplot.h
+    plots/qcustomplot.h \
+    include/readthread.h
 
 FORMS += \
     forms/mainwindow.ui \
