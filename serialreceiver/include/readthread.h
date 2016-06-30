@@ -1,13 +1,21 @@
 #ifndef READTHREAD_H
 #define READTHREAD_H
 
+#include <QObject>
 
-class readThread : public QThread
+class ReadThread : public QThread
 {
+        Q_OBJECT
 public:
-    readThread();
+    explicit ReadThread(QObject *parent =0);
     void run();
-};
+    bool Stop;
 
+signals:
+    void DataReceived();
+
+
+public slots:
+};
 
 #endif // READTHREAD_H

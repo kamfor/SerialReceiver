@@ -2,6 +2,7 @@
 #include "ui_mainwindow.h"
 #include "../include/console.h"
 #include "../include/settingsdialog.h"
+#include "../include/readthread.h"
 
 #include <QMessageBox>
 #include <QLabel>
@@ -121,7 +122,7 @@ void MainWindow::writeData(const QByteArray &data){
     serial->write(data);
 }
 
-void MainWindow::readData(){
+void MainWindow::readData(){ //to thread optimize
 
     QByteArray data = serial->readAll();
     serial->flush();

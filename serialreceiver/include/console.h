@@ -1,7 +1,7 @@
 #ifndef CONSOLE_H
 #define CONSOLE_H
 
-#include <QPlainTextEdit>
+#include <QPlainTextEdit> //add thread to make it faster https://www.youtube.com/watch?v=yazMHbIew0Q
 
 
 //! Klasa Console
