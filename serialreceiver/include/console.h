@@ -19,6 +19,7 @@ signals:
   \param data to dane wpisane z klawiatury
 */
     void getData(const QByteArray &data);
+    void dataReady(bool); //flaga gotowosci
 
 //! Konstruktor 
 /*!
