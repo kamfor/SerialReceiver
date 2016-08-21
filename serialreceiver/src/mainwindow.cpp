@@ -132,7 +132,7 @@ void MainWindow::readData(){ //to thread optimize
     for(int i=0;i<list.count(); i++){
         if(list.at(i).size()>1){
             //qDebug() <<list.at(i);
-            console->putData(list.at(i));
+            console->putData(list.at(i)); //move to thread
             realtimeDataSlot(list.at(i).toInt(&bStatus,16));
         }
     }
