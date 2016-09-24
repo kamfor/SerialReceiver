@@ -105,7 +105,7 @@ private slots:
     dodaje punkt do wykresu
     \param int - aktualna wartość do wykresu
 */
-    void realtimeDataSlot(int);
+    void realtimeDataSlot(double);
 
 //! changePlotCaption
 /*! 

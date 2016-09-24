@@ -127,13 +127,12 @@ void MainWindow::readData(){ //to thread optimize
     QByteArray data = serial->readAll();
     serial->flush();
     data = data.simplified();
-    bool bStatus = false;
     QList<QByteArray> list = data.split(';');
     for(int i=0;i<list.count(); i++){
-        if(list.at(i).size()>1){
-            //qDebug() <<list.at(i);
+        if(list.at(i).size()>0){
+            qDebug() <<list.at(i);
             console->putData(list.at(i)); //move to thread
-            realtimeDataSlot(list.at(i).toInt(&bStatus,16));
+            realtimeDataSlot(list.at(i).toDouble());
         }
     }
 }
@@ -259,7 +258,7 @@ void MainWindow::generatePlot(){
   customPlot->replot();
 }
 
-void MainWindow::realtimeDataSlot(int value0){
+void MainWindow::realtimeDataSlot(double value0){
 
     double key = QDateTime::currentDateTime().toMSecsSinceEpoch()/1000.0;
 
@@ -267,11 +266,11 @@ void MainWindow::realtimeDataSlot(int value0){
     if (key-lastPointKey > 0.02) // at most add point every 10 ms
     {
       // add data to lines:
-      customPlot->graph(0)->addData(key, (double)value0);
+      customPlot->graph(0)->addData(key,value0);
       //customPlot->graph(1)->addData(key, value1);
       // set data of dots:
       customPlot->graph(1)->clearData();
-      customPlot->graph(1)->addData(key, (double)value0);
+      customPlot->graph(1)->addData(key,value0);
       //customPlot->graph(3)->clearData();
       //customPlot->graph(3)->addData(key, value1);
       // remove data of lines that's outside visible range:
